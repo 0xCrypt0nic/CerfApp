@@ -114,6 +114,8 @@ public static class CerfaGenerator
         RemplirVehicule(gfx, d.Vehicule);
         RemplirAncienProprietaire(gfx, d.AncienProprietaire);
         RemplirNouveauProprietaire(gfx, d.NouveauProprietaire);
+        PlacerSignature(gfx, d.SignatureVendeur,  290.0, 507.0, 265.0, 60.0);
+        PlacerSignature(gfx, d.SignatureAcheteur, 290.0, 758.0, 265.0, 65.0);
     }
 
     // ── VÉHICULE ─────────────────────────────────────────────────────────────
@@ -298,6 +300,16 @@ public static class CerfaGenerator
         TxtC(gfx, Ft, p.LieuFait,              63.7, 758.8, 115.4, 11.5);
         // txt_dateDéclaration   rect=(193.3, 758.8, 276.6, 770.3)
         TxtC(gfx, Ft, FormatDate(p.DateFait), 193.3, 758.8,  83.3, 11.5);
+    }
+
+    // ── Signature ────────────────────────────────────────────────────────────
+
+    private static void PlacerSignature(XGraphics gfx, byte[]? png,
+                                        double x, double y, double w, double h)
+    {
+        if (png == null || png.Length == 0) return;
+        using var image = XImage.FromStream(() => new MemoryStream(png));
+        gfx.DrawImage(image, x, y, w, h);
     }
 
     // ── Helpers ──────────────────────────────────────────────────────────────

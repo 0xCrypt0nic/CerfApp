@@ -4,6 +4,7 @@ using CommunityToolkit.Maui.Core.Handlers;
 using CommunityToolkit.Maui.Views;
 using Microsoft.Extensions.Logging;
 using PdfSharpCore.Fonts;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace CessionApp;
 
@@ -19,6 +20,7 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.UseSkiaSharp()
 			.UseMauiCommunityToolkitCamera()
 			.ConfigureMauiHandlers(handlers =>
 			{

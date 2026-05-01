@@ -242,4 +242,10 @@ public partial class RecapitulatifPage : ContentPage
             await DisplayAlertAsync("Erreur", $"Impossible de générer le PDF :\n{ex.Message}", "OK");
         }
     }
+
+    private async void OnSignerEtGenererClicked(object? sender, EventArgs e)
+    {
+        SauvegarderDansModele();
+        await Navigation.PushAsync(new SignaturePage(_cession, isVendeur: true));
+    }
 }
