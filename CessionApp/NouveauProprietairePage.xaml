@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CessionApp.Controls"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             ios:Page.UseSafeArea="True"
+             x:Class="CessionApp.NouveauProprietairePage"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="Auto, *, Auto">
+
+        <controls:HeaderView Grid.Row="0" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="16" Spacing="0">
+
+                <Label Text="LE NOUVEAU PROPRIÉTAIRE"
+                       FontAttributes="Bold"
+                       FontSize="15"
+                       TextDecorations="Underline"
+                       Margin="0,0,0,12" />
+
+                <!-- Type de propriétaire -->
+                <VerticalStackLayout Spacing="6" Margin="0,0,0,12">
+                    <RadioButton x:Name="PersonnePhysiqueRadio"
+                                 Content="Personne physique (ou entreprise individuelle)"
+                                 GroupName="TypeProprietaireNvx"
+                                 CheckedChanged="OnTypeChanged" />
+                    <HorizontalStackLayout x:Name="SexeLayout"
+                                           Spacing="12"
+                                           IsVisible="True"
+                                           Margin="16,0,0,0">
+                        <Label Text="Sexe :" VerticalOptions="Center" />
+                        <RadioButton x:Name="SexeMRadio" Content="M" GroupName="SexeNvx" />
+                        <RadioButton x:Name="SexeFRadio" Content="F" GroupName="SexeNvx" />
+                    </HorizontalStackLayout>
+                    <RadioButton x:Name="PersonneMoraleRadio"
+                                 Content="Personne morale"
+                                 GroupName="TypeProprietaireNvx"
+                                 CheckedChanged="OnTypeChanged" />
+                </VerticalStackLayout>
+
+                <Label Text="Nom, Nom d'usage le cas échéant et Prénom ou Raison Sociale" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="NomCompletEntry" Placeholder="ex : DUPONT Jean" Style="{StaticResource FieldEntry}" />
+
+                <Label Text="N° SIRET" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="SiretEntry" Placeholder="12345678901234" Keyboard="Numeric"
+                       MaxLength="14" Style="{StaticResource FieldEntry}" />
+
+                <!-- Naissance -->
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="0,0,0,0">
+                    <VerticalStackLayout Grid.Column="0" Spacing="2">
+                        <Label Text="Né(e) le" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="DateNaissanceEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
+                               HorizontalTextAlignment="Center" WidthRequest="140"
+                               Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1" Spacing="2">
+                        <Label Text="à (lieu de naissance)" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="LieuNaissanceEntry" Placeholder="ex : PARIS"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <!-- Adresse -->
+                <Label Text="ADRESSE"
+                       FontAttributes="Bold"
+                       FontSize="13"
+                       TextDecorations="Underline"
+                       Margin="0,12,0,8" />
+
+                <Label Text="N° et voie" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="AdresseNumVoieEntry" Placeholder="ex : 12 rue de la Paix" Style="{StaticResource FieldEntry}" />
+
+                <Grid ColumnDefinitions="120,*" ColumnSpacing="8">
+                    <VerticalStackLayout Grid.Column="0" Spacing="2">
+                        <Label Text="Code postal" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="CodePostalEntry" Placeholder="75001" Keyboard="Numeric"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1" Spacing="2">
+                        <Label Text="Commune" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="CommuneEntry" Placeholder="PARIS"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <!-- Certifie -->
+                <Label Text="CERTIFIE"
+                       FontAttributes="Bold"
+                       FontSize="13"
+                       TextDecorations="Underline"
+                       Margin="0,12,0,10" />
+
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,10">
+                    <CheckBox x:Name="CheckAcquerir" Grid.Column="0" VerticalOptions="Start" Margin="0,2,0,0" />
+                    <Label Grid.Column="1" FontSize="12"
+                           Text="Acquérir le véhicule désigné ci-dessus aux dates et heures indiquées par l'ancien propriétaire ;">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelAcquerirTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,12">
+                    <CheckBox x:Name="CheckInformeSituation" Grid.Column="0" VerticalOptions="Start" Margin="0,2,0,0" />
+                    <Label Grid.Column="1" FontSize="12"
+                           Text="Avoir été informé de la situation administrative du véhicule.">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelInformeSituationTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <!-- Fait le -->
+                <Label Text="Fait le :"
+                       FontAttributes="Bold"
+                       FontSize="13"
+                       Margin="0,0,0,4" />
+
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="0,0,0,4">
+                    <VerticalStackLayout Grid.Column="0" Spacing="2">
+                        <Label Text="Date" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="DateFaitEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
+                               HorizontalTextAlignment="Center" WidthRequest="140"
+                               Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1" Spacing="2">
+                        <Label Text="Lieu (commune)" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="LieuFaitEntry" Placeholder="ex : PARIS"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Grid Grid.Row="2" ColumnDefinitions="*,*" Padding="16,8,16,16" ColumnSpacing="8">
+            <Button Grid.Column="0"
+                    Text="Scanner"
+                    Clicked="OnScanClicked" />
+            <Button Grid.Column="1"
+                    Text="Récapitulatif →"
+                    Clicked="OnSuivantClicked" />
+        </Grid>
+
+    </Grid>
+
+</ContentPage>
