@@ -1,4 +1,4 @@
-﻿using CerfApp.Services;
+using CerfApp.Services;
 using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Core.Handlers;
 using CommunityToolkit.Maui.Views;
@@ -25,6 +25,17 @@ public static class MauiProgram
 			.ConfigureMauiHandlers(handlers =>
 			{
 				handlers.AddHandler<CameraView, CameraViewHandler>();
+#if ANDROID
+				// RadioButton tint: white in dark mode, black in light mode
+				Microsoft.Maui.Handlers.RadioButtonHandler.Mapper.AppendToMapping("ThemeColor", (h, _) =>
+				{
+					var isDark = Application.Current?.RequestedTheme == AppTheme.Dark;
+					var tint = Android.Content.Res.ColorStateList.ValueOf(
+						isDark ? Android.Graphics.Color.White : Android.Graphics.Color.Black);
+					if (h.PlatformView is Android.Widget.CompoundButton cb)
+						cb.ButtonTintList = tint;
+				});
+#endif
 			})
 			.ConfigureFonts(fonts =>
 			{

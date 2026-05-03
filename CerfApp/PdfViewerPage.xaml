@@ -31,7 +31,7 @@
         <Button Grid.Row="2"
                 Text="⬆  Partager"
                 Clicked="OnPartagerClicked"
-                BackgroundColor="#2196F3"
+                BackgroundColor="{StaticResource BrandAccent}"
                 TextColor="White"
                 CornerRadius="8"
                 Margin="16,8,16,16"

@@ -47,14 +47,16 @@
 
             <Button Grid.Column="0"
                     Text="Effacer"
-                    BackgroundColor="#F0F0F0"
-                    TextColor="#333333"
+                    BackgroundColor="Transparent"
+                    TextColor="{StaticResource BrandAccent}"
+                    BorderColor="{StaticResource BrandAccent}"
+                    BorderWidth="1.5"
                     CornerRadius="8"
                     Clicked="OnEffacerClicked" />
 
             <Button Grid.Column="1"
                     Text="Valider →"
-                    BackgroundColor="#2196F3"
+                    BackgroundColor="{StaticResource BrandAccent}"
                     TextColor="White"
                     CornerRadius="8"
                     Clicked="OnValiderClicked" />

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CerfApp.Controls.HeaderView"
              x:Name="self"
-             BackgroundColor="{AppThemeBinding Light=White, Dark=#1C1C1E}">
+             BackgroundColor="{StaticResource BrandHeader}">
 
     <Grid RowDefinitions="*, 1">
 
@@ -17,7 +17,7 @@
                    Text="&#xf060;"
                    FontFamily="FaSolid"
                    FontSize="18"
-                   TextColor="{AppThemeBinding Light=#1A1A1A, Dark=White}"
+                   TextColor="White"
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    IsVisible="{Binding ShowBack, Source={x:Reference self}}">
@@ -32,6 +32,7 @@
                    HorizontalOptions="Center"
                    VerticalOptions="Center"
                    HorizontalTextAlignment="Center"
+                   TextColor="White"
                    FontSize="14"
                    FontAttributes="Bold" />
 
@@ -39,7 +40,7 @@
             <Button Grid.Column="2"
                     Text="⚙"
                     FontSize="20"
-                    TextColor="{AppThemeBinding Light=#1A1A1A, Dark=White}"
+                    TextColor="White"
                     BackgroundColor="Transparent"
                     BorderWidth="0"
                     Padding="0"
@@ -50,7 +51,7 @@
 
         <!-- Ligne de séparation -->
         <BoxView Grid.Row="1"
-                 Color="{AppThemeBinding Light=#DEDEDE, Dark=#3A3A3C}" />
+                 Color="{StaticResource BrandHeaderSeparator}" />
 
     </Grid>
 
