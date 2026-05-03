@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CerfApp.Controls"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             ios:Page.UseSafeArea="True"
+             x:Class="CerfApp.ParametresPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="Auto, *">
+
+        <controls:HeaderView Grid.Row="0"
+                             PageTitle="Paramètres"
+                             ShowSettings="False" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="24" Spacing="16">
+                <Label Text="Paramètres à venir..."
+                       HorizontalOptions="Center"
+                       TextColor="Gray"
+                       FontSize="16"
+                       Margin="0,40,0,0" />
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

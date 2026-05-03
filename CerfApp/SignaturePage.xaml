@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CerfApp.Controls"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             ios:Page.UseSafeArea="True"
+             x:Class="CerfApp.SignaturePage"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="Auto, *, Auto">
+
+        <controls:HeaderView Grid.Row="0"
+                             x:Name="Header"
+                             ShowSettings="False" />
+
+        <!-- Zone de dessin -->
+        <Grid Grid.Row="1" Margin="16">
+
+            <!-- Instruction -->
+            <Label x:Name="InstructionLabel"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Center"
+                   FontSize="13"
+                   TextColor="Gray"
+                   Margin="0,8,0,0"
+                   Text="Signez dans le cadre ci-dessous" />
+
+            <!-- Canvas SkiaSharp -->
+            <Border Margin="0,40,0,0"
+                    Stroke="#CCCCCC"
+                    StrokeThickness="1"
+                    BackgroundColor="White">
+                <skia:SKCanvasView x:Name="CanvasView"
+                                   EnableTouchEvents="True"
+                                   PaintSurface="OnPaintSurface"
+                                   Touch="OnTouch" />
+            </Border>
+
+        </Grid>
+
+        <!-- Boutons -->
+        <Grid Grid.Row="2"
+              ColumnDefinitions="*, *"
+              Padding="16,8,16,16"
+              ColumnSpacing="8">
+
+            <Button Grid.Column="0"
+                    Text="Effacer"
+                    BackgroundColor="#F0F0F0"
+                    TextColor="#333333"
+                    CornerRadius="8"
+                    Clicked="OnEffacerClicked" />
+
+            <Button Grid.Column="1"
+                    Text="Valider →"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                    CornerRadius="8"
+                    Clicked="OnValiderClicked" />
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

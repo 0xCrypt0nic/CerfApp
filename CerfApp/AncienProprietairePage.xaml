@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CerfApp.Controls"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             ios:Page.UseSafeArea="True"
+             x:Class="CerfApp.AncienProprietairePage"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="Auto, *, Auto">
+
+        <controls:HeaderView Grid.Row="0" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="16" Spacing="0">
+
+                <Label Text="L'ANCIEN PROPRIÉTAIRE"
+                       FontAttributes="Bold"
+                       FontSize="15"
+                       TextDecorations="Underline"
+                       Margin="0,0,0,12" />
+
+                <!-- Identité -->
+                <!-- Type de propriétaire -->
+                <VerticalStackLayout Spacing="6" Margin="0,0,0,12">
+                    <RadioButton x:Name="PersonnePhysiqueRadio"
+                                 Content="Personne physique (ou entreprise individuelle)"
+                                 GroupName="TypeProprietaire"
+                                 CheckedChanged="OnTypeChanged" />
+                    <HorizontalStackLayout x:Name="SexeLayout"
+                                           Spacing="12"
+                                           IsVisible="True"
+                                           Margin="16,0,0,0">
+                        <Label Text="Sexe :" VerticalOptions="Center" />
+                        <RadioButton x:Name="SexeMRadio" Content="M" GroupName="Sexe" />
+                        <RadioButton x:Name="SexeFRadio" Content="F" GroupName="Sexe" />
+                    </HorizontalStackLayout>
+                    <RadioButton x:Name="PersonneMoraleRadio"
+                                 Content="Personne morale"
+                                 GroupName="TypeProprietaire"
+                                 CheckedChanged="OnTypeChanged" />
+                </VerticalStackLayout>
+
+                <Label Text="Nom, Nom d'usage le cas échéant et Prénom ou Raison Sociale" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="NomCompletEntry" Placeholder="ex : DUPONT Jean" Style="{StaticResource FieldEntry}" />
+
+                <Label Text="N° SIRET" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="SiretEntry" Placeholder="12345678901234" Keyboard="Numeric"
+                       MaxLength="14" Style="{StaticResource FieldEntry}" />
+
+                <!-- Adresse -->
+                <Label Text="ADRESSE"
+                       FontAttributes="Bold"
+                       FontSize="13"
+                       TextDecorations="Underline"
+                       Margin="0,12,0,8" />
+
+                <Label Text="N° et voie" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="AdresseNumVoieEntry" Placeholder="ex : 12 rue de la Paix" Style="{StaticResource FieldEntry}" />
+
+<Grid ColumnDefinitions="120,*" ColumnSpacing="8">
+                    <VerticalStackLayout Grid.Column="0" Spacing="2">
+                        <Label Text="Code postal" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="CodePostalEntry" Placeholder="75001" Keyboard="Numeric"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1" Spacing="2">
+                        <Label Text="Commune" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="CommuneEntry" Placeholder="PARIS"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <!-- Cession -->
+                <HorizontalStackLayout Spacing="16" Margin="0,12,0,8">
+                    <Label Text="Certifie :"
+                           FontAttributes="Bold"
+                           FontSize="13"
+                           VerticalOptions="Center" />
+                    <RadioButton x:Name="CederRadio"
+                                 Content="Céder"
+                                 GroupName="TypeCession"
+                                 IsChecked="True" />
+                    <RadioButton x:Name="CederDestructionRadio"
+                                 Content="Céder pour destruction"
+                                 GroupName="TypeCession"
+                                 CheckedChanged="OnCederChanged" />
+                </HorizontalStackLayout>
+
+                <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8" Margin="0,0,0,12">
+                    <VerticalStackLayout Grid.Column="0" Spacing="2">
+                        <Label Text="Date de la cession" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="DateCessionEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1" Spacing="2">
+                        <Label Text="Heure" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="HeureEntry" Placeholder="HH" Keyboard="Numeric" WidthRequest="64"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="2" Spacing="2">
+                        <Label Text="Minute" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="MinuteEntry" Placeholder="MM" Keyboard="Numeric" WidthRequest="64"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <!-- Je certifie en outre -->
+                <Label Text="JE CERTIFIE EN OUTRE"
+                       FontAttributes="Bold"
+                       FontSize="13"
+                       TextDecorations="Underline"
+                       Margin="0,4,0,10" />
+
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,10">
+                    <CheckBox x:Name="CheckSitAdmin" Grid.Column="0" VerticalOptions="Start" Margin="0,2,0,0" />
+                    <Label Grid.Column="1" FontSize="12"
+                           Text="Avoir remis au nouveau propriétaire un certificat établi depuis moins de quinze jours par le ministre de l'Intérieur, attestant à sa date d'édition de la situation administrative du véhicule ;">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelSitAdminTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,10">
+                    <CheckBox x:Name="CheckTransformation" Grid.Column="0" VerticalOptions="Start" Margin="0,2,0,0" />
+                    <Label Grid.Column="1" FontSize="12"
+                           Text="Que ce véhicule n'a pas subi de transformation notable susceptible de modifier les indications du certificat de conformité ou de l'actuel certificat d'immatriculation ;">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTransformationTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <Grid x:Name="VhuSection" ColumnDefinitions="Auto,*" ColumnSpacing="10"
+                      Margin="0,0,0,4" IsVisible="False">
+                    <CheckBox x:Name="CheckVhu" Grid.Column="0" VerticalOptions="Start" Margin="0,2,0,0"
+                              CheckedChanged="OnVhuChecked" />
+                    <VerticalStackLayout Grid.Column="1" Spacing="6">
+                        <Label FontSize="12"
+                               Text="Que ce véhicule est cédé pour destruction à un professionnel de la destruction des véhicules hors d'usage (VHU) portant le n° d'agrément :">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnLabelVhuTapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Entry x:Name="AgrémentEntry" Placeholder="N° d'agrément VHU"
+                               Style="{StaticResource FieldEntry}" />
+                        <Label FontSize="11" TextColor="#888888"
+                               Text="Obligatoire pour VP, camionnette ou cyclomoteur à trois roues. Liste sur immatriculation.ants.gouv.fr" />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Label Text="Fait le :"
+                       FontAttributes="Bold"
+                       FontSize="13"
+                       Margin="0,0,0,4" />
+
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="0,0,0,4">
+                    <VerticalStackLayout Grid.Column="0" Spacing="2">
+                        <Label Text="Date" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="DateFaitEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
+                               HorizontalTextAlignment="Center" WidthRequest="140"
+                               Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1" Spacing="2">
+                        <Label Text="Lieu (commune)" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="LieuCessionEntry" Placeholder="ex : PARIS"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Grid Grid.Row="2" ColumnDefinitions="*,*" Padding="16,8,16,16" ColumnSpacing="8">
+            <Button x:Name="ScanButton"
+                    Grid.Column="0"
+                    Text="Scanner"
+                    Clicked="OnScanClicked" />
+
+            <Button Grid.Column="1"
+                    Text="Suivant →"
+                    Clicked="OnSuivantClicked" />
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CerfApp.Controls"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             ios:Page.UseSafeArea="True"
+             x:Class="CerfApp.RecapitulatifPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="Auto, *, Auto">
+
+        <controls:HeaderView Grid.Row="0" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="16" Spacing="0">
+
+                <!-- ══════════════════════════════════════════════════════════ -->
+                <!-- VÉHICULE                                                  -->
+                <!-- ══════════════════════════════════════════════════════════ -->
+                <Label Text="LE VÉHICULE"
+                       FontAttributes="Bold" FontSize="15"
+                       TextDecorations="Underline" Margin="0,0,0,12" />
+
+                <Label Text="Présence du certificat d'immatriculation"
+                       Style="{StaticResource FieldLabel}" Margin="0,0,0,4" />
+                <HorizontalStackLayout Spacing="24" Margin="0,0,0,12">
+                    <RadioButton x:Name="V_CertOuiRadio"  Content="OUI" GroupName="GrpCertif"
+                                 CheckedChanged="OnCertificatChanged" />
+                    <RadioButton x:Name="V_CertNonRadio"  Content="NON" GroupName="GrpCertif"
+                                 CheckedChanged="OnCertificatChanged" />
+                </HorizontalStackLayout>
+
+                <Label Text="(A)  Numéro d'immatriculation" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="V_ImmatriculationEntry" Placeholder="AB-123-CD" Style="{StaticResource FieldEntry}" />
+
+                <Label Text="(B)  Date de 1re immatriculation" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="V_DateImmatEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric" Style="{StaticResource FieldEntry}" />
+
+                <Label Text="(D.1)  Marque" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="V_MarqueEntry" Placeholder="ex : RENAULT" Style="{StaticResource FieldEntry}" />
+
+                <Label Text="(D.2)  Type, variante, version" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="V_TypeEntry" Placeholder="ex : CLIO IV PHASE 2" Style="{StaticResource FieldEntry}" />
+
+                <Label Text="(D.3)  Dénomination commerciale" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="V_DenominationEntry" Placeholder="ex : Clio" Style="{StaticResource FieldEntry}" />
+
+                <Label Text="(E)  Numéro d'identification (VIN)" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="V_VinEntry" Placeholder="17 caractères" Style="{StaticResource FieldEntry}" />
+
+                <Label Text="(J.1)  Genre national" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="V_GenreEntry" Placeholder="ex : VP, CTTE…" Style="{StaticResource FieldEntry}" />
+
+                <Label Text="Kilométrage compteur" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="V_KilometrageEntry" Placeholder="ex : 125000"
+                       Keyboard="Numeric" Style="{StaticResource FieldEntry}" />
+
+                <VerticalStackLayout x:Name="V_NumeroFormuleLayout" IsVisible="False" Spacing="2">
+                    <Label Text="Numéro de formule" Style="{StaticResource FieldLabel}" />
+                    <Entry x:Name="V_NumeroFormuleEntry" Placeholder="ex : 2025AE62234" Style="{StaticResource FieldEntry}" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout x:Name="V_DateCertificatLayout" IsVisible="False" Spacing="2">
+                    <Label Text="(I)  Date du certificat d'immatriculation" Style="{StaticResource FieldLabel}" />
+                    <Entry x:Name="V_DateCertificatEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric" Style="{StaticResource FieldEntry}" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout x:Name="V_MotifAbsenceLayout" IsVisible="False" Spacing="2" Margin="0,0,0,4">
+                    <Label Text="Motif d'absence du certificat" Style="{StaticResource FieldLabel}" />
+                    <Editor x:Name="V_MotifAbsenceEditor" Placeholder="précisez le motif"
+                            HeightRequest="80" AutoSize="Disabled" />
+                </VerticalStackLayout>
+
+                <!-- ══════════════════════════════════════════════════════════ -->
+                <!-- ANCIEN PROPRIÉTAIRE                                       -->
+                <!-- ══════════════════════════════════════════════════════════ -->
+                <Label Text="L'ANCIEN PROPRIÉTAIRE"
+                       FontAttributes="Bold" FontSize="15"
+                       TextDecorations="Underline" Margin="0,24,0,12" />
+
+                <VerticalStackLayout Spacing="6" Margin="0,0,0,12">
+                    <RadioButton x:Name="AP_PersonnePhysiqueRadio"
+                                 Content="Personne physique (ou entreprise individuelle)"
+                                 GroupName="GrpTypeAnc" CheckedChanged="OnTypeAncienChanged" />
+                    <HorizontalStackLayout x:Name="AP_SexeLayout" Spacing="12" IsVisible="True" Margin="16,0,0,0">
+                        <Label Text="Sexe :" VerticalOptions="Center" />
+                        <RadioButton x:Name="AP_SexeMRadio" Content="M" GroupName="GrpSexeAnc" />
+                        <RadioButton x:Name="AP_SexeFRadio" Content="F" GroupName="GrpSexeAnc" />
+                    </HorizontalStackLayout>
+                    <RadioButton x:Name="AP_PersonneMoraleRadio"
+                                 Content="Personne morale"
+                                 GroupName="GrpTypeAnc" CheckedChanged="OnTypeAncienChanged" />
+                </VerticalStackLayout>
+
+                <Label Text="Nom, Nom d'usage le cas échéant et Prénom ou Raison Sociale" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="AP_NomCompletEntry" Placeholder="ex : DUPONT Jean" Style="{StaticResource FieldEntry}" />
+
+                <Label Text="N° SIRET" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="AP_SiretEntry" Placeholder="12345678901234" Keyboard="Numeric"
+                       MaxLength="14" Style="{StaticResource FieldEntry}" />
+
+                <Label Text="ADRESSE" FontAttributes="Bold" FontSize="13"
+                       TextDecorations="Underline" Margin="0,8,0,8" />
+
+                <Label Text="N° et voie" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="AP_AdresseEntry" Placeholder="ex : 12 rue de la Paix" Style="{StaticResource FieldEntry}" />
+
+                <Grid ColumnDefinitions="120,*" ColumnSpacing="8">
+                    <VerticalStackLayout Grid.Column="0" Spacing="2">
+                        <Label Text="Code postal" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="AP_CodePostalEntry" Placeholder="75001" Keyboard="Numeric"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1" Spacing="2">
+                        <Label Text="Commune" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="AP_CommuneEntry" Placeholder="PARIS"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <HorizontalStackLayout Spacing="16" Margin="0,12,0,8">
+                    <Label Text="Certifie :" FontAttributes="Bold" FontSize="13" VerticalOptions="Center" />
+                    <RadioButton x:Name="AP_CederRadio" Content="Céder"
+                                 GroupName="GrpCession" IsChecked="True" CheckedChanged="OnCederChanged" />
+                    <RadioButton x:Name="AP_CederDestructionRadio" Content="Céder pour destruction"
+                                 GroupName="GrpCession" CheckedChanged="OnCederChanged" />
+                </HorizontalStackLayout>
+
+                <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8" Margin="0,0,0,12">
+                    <VerticalStackLayout Grid.Column="0" Spacing="2">
+                        <Label Text="Date de la cession" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="AP_DateCessionEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1" Spacing="2">
+                        <Label Text="Heure" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="AP_HeureEntry" Placeholder="HH" Keyboard="Numeric" WidthRequest="64"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="2" Spacing="2">
+                        <Label Text="Minute" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="AP_MinuteEntry" Placeholder="MM" Keyboard="Numeric" WidthRequest="64"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Label Text="JE CERTIFIE EN OUTRE" FontAttributes="Bold" FontSize="13"
+                       TextDecorations="Underline" Margin="0,4,0,10" />
+
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,10">
+                    <CheckBox x:Name="AP_CheckSitAdmin" Grid.Column="0" VerticalOptions="Start" Margin="0,2,0,0" />
+                    <Label Grid.Column="1" FontSize="12"
+                           Text="Avoir remis au nouveau propriétaire un certificat établi depuis moins de quinze jours par le ministre de l'Intérieur, attestant à sa date d'édition de la situation administrative du véhicule ;">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelAPSitAdminTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,10">
+                    <CheckBox x:Name="AP_CheckTransformation" Grid.Column="0" VerticalOptions="Start" Margin="0,2,0,0" />
+                    <Label Grid.Column="1" FontSize="12"
+                           Text="Que ce véhicule n'a pas subi de transformation notable susceptible de modifier les indications du certificat de conformité ou de l'actuel certificat d'immatriculation ;">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelAPTransformationTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <Grid x:Name="AP_VhuSection" ColumnDefinitions="Auto,*" ColumnSpacing="10"
+                      Margin="0,0,0,4" IsVisible="False">
+                    <CheckBox x:Name="AP_CheckVhu" Grid.Column="0" VerticalOptions="Start" Margin="0,2,0,0" />
+                    <VerticalStackLayout Grid.Column="1" Spacing="6">
+                        <Label FontSize="12"
+                               Text="Que ce véhicule est cédé pour destruction à un professionnel de la destruction des véhicules hors d'usage (VHU) portant le n° d'agrément :">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnLabelAPVhuTapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Entry x:Name="AP_AgrémentEntry" Placeholder="N° d'agrément VHU" Style="{StaticResource FieldEntry}" />
+                        <Label FontSize="11" TextColor="#888888"
+                               Text="Obligatoire pour VP, camionnette ou cyclomoteur à trois roues." />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Label Text="Fait le :" FontAttributes="Bold" FontSize="13" Margin="0,4,0,4" />
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="0,0,0,4">
+                    <VerticalStackLayout Grid.Column="0" Spacing="2">
+                        <Label Text="Date" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="AP_DateFaitEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
+                               HorizontalTextAlignment="Center" WidthRequest="140" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1" Spacing="2">
+                        <Label Text="Lieu (commune)" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="AP_LieuFaitEntry" Placeholder="ex : PARIS"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <!-- ══════════════════════════════════════════════════════════ -->
+                <!-- NOUVEAU PROPRIÉTAIRE                                      -->
+                <!-- ══════════════════════════════════════════════════════════ -->
+                <Label Text="LE NOUVEAU PROPRIÉTAIRE"
+                       FontAttributes="Bold" FontSize="15"
+                       TextDecorations="Underline" Margin="0,24,0,12" />
+
+                <VerticalStackLayout Spacing="6" Margin="0,0,0,12">
+                    <RadioButton x:Name="NP_PersonnePhysiqueRadio"
+                                 Content="Personne physique (ou entreprise individuelle)"
+                                 GroupName="GrpTypeNvx" CheckedChanged="OnTypeNouveauChanged" />
+                    <HorizontalStackLayout x:Name="NP_SexeLayout" Spacing="12" IsVisible="True" Margin="16,0,0,0">
+                        <Label Text="Sexe :" VerticalOptions="Center" />
+                        <RadioButton x:Name="NP_SexeMRadio" Content="M" GroupName="GrpSexeNvx" />
+                        <RadioButton x:Name="NP_SexeFRadio" Content="F" GroupName="GrpSexeNvx" />
+                    </HorizontalStackLayout>
+                    <RadioButton x:Name="NP_PersonneMoraleRadio"
+                                 Content="Personne morale"
+                                 GroupName="GrpTypeNvx" CheckedChanged="OnTypeNouveauChanged" />
+                </VerticalStackLayout>
+
+                <Label Text="Nom, Nom d'usage le cas échéant et Prénom ou Raison Sociale" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="NP_NomCompletEntry" Placeholder="ex : DUPONT Jean" Style="{StaticResource FieldEntry}" />
+
+                <Label Text="N° SIRET" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="NP_SiretEntry" Placeholder="12345678901234" Keyboard="Numeric"
+                       MaxLength="14" Style="{StaticResource FieldEntry}" />
+
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="0,0,0,0">
+                    <VerticalStackLayout Grid.Column="0" Spacing="2">
+                        <Label Text="Né(e) le" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="NP_DateNaissanceEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
+                               HorizontalTextAlignment="Center" WidthRequest="140" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1" Spacing="2">
+                        <Label Text="à (lieu de naissance)" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="NP_LieuNaissanceEntry" Placeholder="ex : PARIS"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Label Text="ADRESSE" FontAttributes="Bold" FontSize="13"
+                       TextDecorations="Underline" Margin="0,8,0,8" />
+
+                <Label Text="N° et voie" Style="{StaticResource FieldLabel}" />
+                <Entry x:Name="NP_AdresseEntry" Placeholder="ex : 12 rue de la Paix" Style="{StaticResource FieldEntry}" />
+
+                <Grid ColumnDefinitions="120,*" ColumnSpacing="8">
+                    <VerticalStackLayout Grid.Column="0" Spacing="2">
+                        <Label Text="Code postal" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="NP_CodePostalEntry" Placeholder="75001" Keyboard="Numeric"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1" Spacing="2">
+                        <Label Text="Commune" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="NP_CommuneEntry" Placeholder="PARIS"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Label Text="CERTIFIE" FontAttributes="Bold" FontSize="13"
+                       TextDecorations="Underline" Margin="0,12,0,10" />
+
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,10">
+                    <CheckBox x:Name="NP_CheckAcquerir" Grid.Column="0" VerticalOptions="Start" Margin="0,2,0,0" />
+                    <Label Grid.Column="1" FontSize="12"
+                           Text="Acquérir le véhicule désigné ci-dessus aux dates et heures indiquées par l'ancien propriétaire ;">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelNPAcquerirTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,12">
+                    <CheckBox x:Name="NP_CheckInformeSituation" Grid.Column="0" VerticalOptions="Start" Margin="0,2,0,0" />
+                    <Label Grid.Column="1" FontSize="12"
+                           Text="Avoir été informé de la situation administrative du véhicule.">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelNPInformeSituationTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <Label Text="Fait le :" FontAttributes="Bold" FontSize="13" Margin="0,0,0,4" />
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="0,0,0,4">
+                    <VerticalStackLayout Grid.Column="0" Spacing="2">
+                        <Label Text="Date" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="NP_DateFaitEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
+                               HorizontalTextAlignment="Center" WidthRequest="140" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1" Spacing="2">
+                        <Label Text="Lieu (commune)" Style="{StaticResource FieldLabel}" />
+                        <Entry x:Name="NP_LieuFaitEntry" Placeholder="ex : PARIS"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+                    </VerticalStackLayout>
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Grid Grid.Row="2"
+              RowDefinitions="Auto, Auto"
+              Padding="16,8,16,16"
+              RowSpacing="8">
+
+            <Button Grid.Row="0"
+                    Text="Générer le PDF"
+                    Clicked="OnGenererClicked"
+                    HorizontalOptions="Fill" />
+
+            <Button Grid.Row="1"
+                    Text="✍️  Signer et générer le PDF"
+                    Clicked="OnSignerEtGenererClicked"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                    HorizontalOptions="Fill" />
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>
