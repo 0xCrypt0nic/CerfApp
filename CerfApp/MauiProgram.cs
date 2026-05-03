@@ -26,15 +26,26 @@ public static class MauiProgram
 			{
 				handlers.AddHandler<CameraView, CameraViewHandler>();
 #if ANDROID
-				// RadioButton tint: white in dark mode, black in light mode
 				Microsoft.Maui.Handlers.RadioButtonHandler.Mapper.AppendToMapping("ThemeColor", (h, _) =>
 				{
-					var isDark = Application.Current?.RequestedTheme == AppTheme.Dark;
-					var tint = Android.Content.Res.ColorStateList.ValueOf(
-						isDark ? Android.Graphics.Color.White : Android.Graphics.Color.Black);
-					if (h.PlatformView is Android.Widget.CompoundButton cb)
-						cb.ButtonTintList = tint;
+					void UpdateTint()
+					{
+						var isDark = Application.Current?.RequestedTheme == AppTheme.Dark;
+						var color = isDark ? Android.Graphics.Color.White : Android.Graphics.Color.Black;
+						var states = new int[][] {
+							new[] { Android.Resource.Attribute.StateChecked },
+							new[] { -Android.Resource.Attribute.StateChecked }
+						};
+						var colors = new int[] { (int)color, (int)color };
+						var tint = new Android.Content.Res.ColorStateList(states, colors);
+						if (h.PlatformView is Android.Widget.CompoundButton cb)
+							cb.ButtonTintList = tint;
+					}
+					UpdateTint();
+					if (Application.Current != null)
+						Application.Current.RequestedThemeChanged += (_, _) => UpdateTint();
 				});
+
 #endif
 			})
 			.ConfigureFonts(fonts =>

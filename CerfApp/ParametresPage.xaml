@@ -14,12 +14,25 @@
                              ShowSettings="False" />
 
         <ScrollView Grid.Row="1">
-            <VerticalStackLayout Padding="24" Spacing="16">
-                <Label Text="Paramètres à venir..."
-                       HorizontalOptions="Center"
-                       TextColor="Gray"
-                       FontSize="16"
-                       Margin="0,40,0,0" />
+            <VerticalStackLayout Padding="24" Spacing="8">
+
+                <Label Text="Apparence"
+                       FontAttributes="Bold"
+                       FontSize="15"
+                       TextDecorations="Underline"
+                       Margin="0,16,0,12" />
+
+                <HorizontalStackLayout Spacing="24" HorizontalOptions="Center">
+                    <RadioButton x:Name="ModeSombreRadio"
+                                 Content="Mode Sombre"
+                                 GroupName="GrpTheme"
+                                 CheckedChanged="OnThemeChanged" />
+                    <RadioButton x:Name="ModeCLairRadio"
+                                 Content="Mode Clair"
+                                 GroupName="GrpTheme"
+                                 CheckedChanged="OnThemeChanged" />
+                </HorizontalStackLayout>
+
             </VerticalStackLayout>
         </ScrollView>
 
