@@ -7,104 +7,28 @@
              x:Class="CerfApp.MainPage"
              NavigationPage.HasNavigationBar="False">
 
-    <Grid RowDefinitions="Auto, *, Auto">
+    <Grid RowDefinitions="Auto, *">
 
-        <controls:HeaderView Grid.Row="0" ShowBack="False" />
+        <controls:HeaderView Grid.Row="0"
+                             PageTitle="CerfApp"
+                             ShowBack="False"
+                             ShowSettings="True" />
 
-        <ScrollView Grid.Row="1">
-            <VerticalStackLayout Padding="16" Spacing="0">
+        <VerticalStackLayout Grid.Row="1"
+                             Spacing="16"
+                             Padding="24"
+                             VerticalOptions="Center">
 
-                <Label Text="LE VÉHICULE"
-                       FontAttributes="Bold"
-                       FontSize="15"
-                       TextDecorations="Underline"
-                       Margin="0,0,0,12" />
+            <Label Text="Choisissez un formulaire"
+                   FontSize="16"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,16" />
 
-                <!-- Présence du certificat — en haut du formulaire -->
-                <Label Text="Présence du certificat d'immatriculation"
-                       Style="{StaticResource FieldLabel}"
-                       Margin="0,0,0,4" />
+            <Button Text="Certificat de cession 15776*02"
+                    Clicked="OnCerfa15776Clicked"
+                    HorizontalOptions="Fill" />
 
-                <HorizontalStackLayout Spacing="24" Margin="0,0,0,12">
-                    <RadioButton x:Name="CertOuiRadio"
-                                 Content="OUI"
-                                 GroupName="Certificat"
-                                 CheckedChanged="OnCertificatChanged" />
-                    <RadioButton x:Name="CertNonRadio"
-                                 Content="NON"
-                                 GroupName="Certificat"
-                                 CheckedChanged="OnCertificatChanged" />
-                </HorizontalStackLayout>
-
-                <!-- (A) Immatriculation -->
-                <Label Text="(A)  Numéro d'immatriculation" Style="{StaticResource FieldLabel}" />
-                <Entry x:Name="ImmatriculationEntry" Placeholder="AB-123-CD" Style="{StaticResource FieldEntry}" />
-
-                <!-- (B) Date 1re immatriculation -->
-                <Label Text="(B)  Date de 1re immatriculation" Style="{StaticResource FieldLabel}" />
-                <Entry x:Name="DateImmatEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric" Style="{StaticResource FieldEntry}" />
-
-                <!-- (D.1) Marque -->
-                <Label Text="(D.1)  Marque" Style="{StaticResource FieldLabel}" />
-                <Entry x:Name="MarqueEntry" Placeholder="ex : RENAULT" Style="{StaticResource FieldEntry}" />
-
-                <!-- (D.2) Type / variante / version -->
-                <Label Text="(D.2)  Type, variante, version" Style="{StaticResource FieldLabel}" />
-                <Entry x:Name="TypeEntry" Placeholder="ex : CLIO IV PHASE 2" Style="{StaticResource FieldEntry}" />
-
-                <!-- (D.3) Dénomination commerciale -->
-                <Label Text="(D.3)  Dénomination commerciale" Style="{StaticResource FieldLabel}" />
-                <Entry x:Name="DenominationEntry" Placeholder="ex : Clio" Style="{StaticResource FieldEntry}" />
-
-                <!-- (E) VIN -->
-                <Label Text="(E)  Numéro d'identification (VIN)" Style="{StaticResource FieldLabel}" />
-                <Entry x:Name="VinEntry" Placeholder="17 caractères" Style="{StaticResource FieldEntry}" />
-
-                <!-- (J.1) Genre national -->
-                <Label Text="(J.1)  Genre national" Style="{StaticResource FieldLabel}" />
-                <Entry x:Name="GenreEntry" Placeholder="ex : VP, CTTE, MTL…" Style="{StaticResource FieldEntry}" />
-
-                <!-- Numéro de formule (OUI + format SIV) -->
-                <VerticalStackLayout x:Name="NumeroFormuleLayout" IsVisible="False" Spacing="2">
-                    <Label Text="Numéro de formule" Style="{StaticResource FieldLabel}" />
-                    <Entry x:Name="NumeroFormuleEntry"
-                           Placeholder="ex : 2025AE62234"
-                           Style="{StaticResource FieldEntry}" />
-                </VerticalStackLayout>
-
-                <!-- Date du certificat (I) (OUI + format FNI ancien) -->
-                <VerticalStackLayout x:Name="DateCertificatLayout" IsVisible="False" Spacing="2">
-                    <Label Text="(I)  Date du certificat d'immatriculation" Style="{StaticResource FieldLabel}" />
-                    <Entry x:Name="DateCertificatEntry"
-                           Placeholder="JJ/MM/AAAA"
-                           Keyboard="Numeric"
-                           Style="{StaticResource FieldEntry}" />
-                </VerticalStackLayout>
-
-                <!-- Motif d'absence (si NON) -->
-                <VerticalStackLayout x:Name="MotifAbsenceLayout" IsVisible="False" Spacing="2">
-                    <Label Text="Motif d'absence du certificat" Style="{StaticResource FieldLabel}" />
-                    <Editor x:Name="MotifAbsenceEditor"
-                            Placeholder="précisez le motif"
-                            HeightRequest="90"
-                            AutoSize="Disabled"
-                            Margin="0,0,0,0" />
-                </VerticalStackLayout>
-
-            </VerticalStackLayout>
-        </ScrollView>
-
-        <Grid Grid.Row="2" ColumnDefinitions="*,*" Padding="16,8,16,16" ColumnSpacing="8">
-            <Button x:Name="ScanButton"
-                    Grid.Column="0"
-                    Text="Scanner"
-                    Clicked="OnScanClicked"
-                    IsEnabled="False" />
-
-            <Button Grid.Column="1"
-                    Text="Suivant →"
-                    Clicked="OnSuivantClicked" />
-        </Grid>
+        </VerticalStackLayout>
 
     </Grid>
 

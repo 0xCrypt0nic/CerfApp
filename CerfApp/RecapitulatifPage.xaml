@@ -9,7 +9,7 @@
 
     <Grid RowDefinitions="Auto, *, Auto">
 
-        <controls:HeaderView Grid.Row="0" />
+        <controls:HeaderView Grid.Row="0" ShowSettings="False" />
 
         <ScrollView Grid.Row="1">
             <VerticalStackLayout Padding="16" Spacing="0">

@@ -11,7 +11,6 @@ public partial class App : Application
 
 	protected override Window CreateWindow(IActivationState? activationState)
 	{
-		var cession = new CessionData();
-		return new Window(new NavigationPage(new MainPage(cession)));
+		return new Window(new NavigationPage(new MainPage()));
 	}
 }
