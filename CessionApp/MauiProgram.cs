@@ -37,6 +37,8 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
+		builder.Services.AddSingleton<Services.ICerfaPageRenderer, PdfRenderService>();
+
 		return builder.Build();
 	}
 }

@@ -232,10 +232,7 @@ public partial class RecapitulatifPage : ContentPage
         try
         {
             var pdfPath = await CerfaGenerator.GenererAsync(_cession);
-            await Launcher.OpenAsync(new OpenFileRequest
-            {
-                File = new ReadOnlyFile(pdfPath)
-            });
+            await Navigation.PushAsync(new PdfViewerPage(pdfPath));
         }
         catch (Exception ex)
         {
