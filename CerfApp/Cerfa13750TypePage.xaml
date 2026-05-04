@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CerfApp.Controls"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             ios:Page.UseSafeArea="True"
+             x:Class="CerfApp.Cerfa13750TypePage"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="Auto, *, Auto">
+
+        <controls:HeaderView Grid.Row="0"
+                             PageTitle="Certificat d'immatriculation (13750*07)"
+                             ShowBack="True"
+                             ShowSettings="False" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="24" Spacing="8">
+
+                <Label Text="Type de demande"
+                       FontAttributes="Bold"
+                       FontSize="15"
+                       TextDecorations="Underline"
+                       Margin="0,8,0,16" />
+
+                <RadioButton x:Name="RadioCertificat"
+                             Content="Demande de certificat"
+                             GroupName="GrpType"
+                             CheckedChanged="OnTypeChanged" />
+
+                <RadioButton x:Name="RadioDuplicata"
+                             Content="Duplicata"
+                             GroupName="GrpType"
+                             CheckedChanged="OnTypeChanged" />
+
+                <RadioButton x:Name="RadioCorrection"
+                             Content="Correction"
+                             GroupName="GrpType"
+                             CheckedChanged="OnTypeChanged" />
+
+                <RadioButton x:Name="RadioChangementDomicile"
+                             Content="Changement de domicile"
+                             GroupName="GrpType"
+                             CheckedChanged="OnTypeChanged" />
+
+                <RadioButton x:Name="RadioChangementEtatCivil"
+                             Content="Changement d'état civil ou matrimonial"
+                             GroupName="GrpType"
+                             CheckedChanged="OnTypeChanged" />
+
+                <RadioButton x:Name="RadioChangementTechnique"
+                             Content="Changement des caractéristiques techniques"
+                             GroupName="GrpType"
+                             CheckedChanged="OnTypeChanged" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Button Grid.Row="2"
+                Text="Suivant →"
+                Clicked="OnSuivantClicked"
+                Margin="16,8,16,16"
+                HorizontalOptions="Fill" />
+
+    </Grid>
+
+</ContentPage>

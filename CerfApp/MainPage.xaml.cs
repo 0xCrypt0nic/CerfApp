@@ -13,4 +13,9 @@ public partial class MainPage : ContentPage
     {
         await Navigation.PushAsync(new VehiclePage(new CessionData()));
     }
+
+    private async void OnCerfa13750Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Cerfa13750TypePage(new Cerfa13750Data()));
+    }
 }

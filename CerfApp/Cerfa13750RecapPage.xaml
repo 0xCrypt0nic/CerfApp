@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CerfApp.Controls"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             ios:Page.UseSafeArea="True"
+             x:Class="CerfApp.Cerfa13750RecapPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="Auto, *, Auto">
+
+        <controls:HeaderView Grid.Row="0"
+                             PageTitle="Récapitulatif (13750*07)"
+                             ShowBack="True"
+                             ShowSettings="False" />
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="16" Spacing="0">
+
+                <!-- ── VÉHICULE ─────────────────────────────────────── -->
+                <Label Text="VÉHICULE"
+                       FontAttributes="Bold" FontSize="15"
+                       TextDecorations="Underline" Margin="0,8,0,8" />
+
+                <Grid ColumnDefinitions="*, *" ColumnSpacing="16" Margin="0,0,0,4">
+                    <VerticalStackLayout Grid.Column="0">
+                        <Label x:Name="R_Immat"    Style="{StaticResource RecapValue}" />
+                        <Label Text="Immatriculation" Style="{StaticResource RecapLabel}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1">
+                        <Label x:Name="R_Marque"   Style="{StaticResource RecapValue}" />
+                        <Label Text="Marque" Style="{StaticResource RecapLabel}" />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Grid ColumnDefinitions="*, *" ColumnSpacing="16" Margin="0,0,0,4">
+                    <VerticalStackLayout Grid.Column="0">
+                        <Label x:Name="R_Modele"   Style="{StaticResource RecapValue}" />
+                        <Label Text="Type / Dénomination" Style="{StaticResource RecapLabel}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1">
+                        <Label x:Name="R_MiseCirc" Style="{StaticResource RecapValue}" />
+                        <Label Text="1re mise en circulation" Style="{StaticResource RecapLabel}" />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Grid ColumnDefinitions="*, *" ColumnSpacing="16" Margin="0,0,0,12">
+                    <VerticalStackLayout Grid.Column="0">
+                        <Label x:Name="R_TypeMine" Style="{StaticResource RecapValue}" />
+                        <Label Text="Type mine (TVV)" Style="{StaticResource RecapLabel}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1">
+                        <Label x:Name="R_Couleur"  Style="{StaticResource RecapValue}" />
+                        <Label Text="Couleur / Teinte" Style="{StaticResource RecapLabel}" />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <!-- ── TITULAIRE ────────────────────────────────────── -->
+                <Label Text="TITULAIRE"
+                       FontAttributes="Bold" FontSize="15"
+                       TextDecorations="Underline" Margin="0,8,0,8" />
+
+                <Label x:Name="R_TitNom"     Style="{StaticResource RecapValue}" />
+                <Label Text="Nom / Raison sociale" Style="{StaticResource RecapLabel}" Margin="0,0,0,4" />
+
+                <Label x:Name="R_TitAdresse" Style="{StaticResource RecapValue}" />
+                <Label Text="Adresse" Style="{StaticResource RecapLabel}" Margin="0,0,0,4" />
+
+                <Grid ColumnDefinitions="*, *" ColumnSpacing="16" Margin="0,0,0,4">
+                    <VerticalStackLayout Grid.Column="0">
+                        <Label x:Name="R_TitNaissance" Style="{StaticResource RecapValue}" />
+                        <Label Text="Date de naissance" Style="{StaticResource RecapLabel}" />
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1">
+                        <Label x:Name="R_TitSign" Style="{StaticResource RecapValue}" />
+                        <Label Text="Signature le" Style="{StaticResource RecapLabel}" />
+                    </VerticalStackLayout>
+                </Grid>
+
+                <!-- ── LOUEUR ───────────────────────────────────────── -->
+                <VerticalStackLayout x:Name="LoueurSection" IsVisible="False" Spacing="0">
+                    <Label Text="LOUEUR"
+                           FontAttributes="Bold" FontSize="15"
+                           TextDecorations="Underline" Margin="0,12,0,8" />
+
+                    <Label x:Name="R_LouNom"     Style="{StaticResource RecapValue}" />
+                    <Label Text="Nom / Raison sociale" Style="{StaticResource RecapLabel}" Margin="0,0,0,4" />
+
+                    <Label x:Name="R_LouAdresse" Style="{StaticResource RecapValue}" />
+                    <Label Text="Adresse" Style="{StaticResource RecapLabel}" Margin="0,0,0,4" />
+
+                    <Label x:Name="R_LouSign"    Style="{StaticResource RecapValue}" />
+                    <Label Text="Signature le" Style="{StaticResource RecapLabel}" Margin="0,0,0,4" />
+                </VerticalStackLayout>
+
+                <!-- ── LOCATAIRE ─────────────────────────────────────── -->
+                <VerticalStackLayout x:Name="LocataireSection" IsVisible="False" Spacing="0">
+                    <Label Text="LOCATAIRE"
+                           FontAttributes="Bold" FontSize="15"
+                           TextDecorations="Underline" Margin="0,12,0,8" />
+
+                    <Label x:Name="R_LocNom"     Style="{StaticResource RecapValue}" />
+                    <Label Text="Nom / Raison sociale" Style="{StaticResource RecapLabel}" Margin="0,0,0,4" />
+
+                    <Label x:Name="R_LocAdresse" Style="{StaticResource RecapValue}" />
+                    <Label Text="Adresse" Style="{StaticResource RecapLabel}" Margin="0,0,0,4" />
+
+                    <Label x:Name="R_LocSign"    Style="{StaticResource RecapValue}" />
+                    <Label Text="Signature le" Style="{StaticResource RecapLabel}" Margin="0,0,0,4" />
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Grid Grid.Row="2"
+              ColumnDefinitions="*, *"
+              Padding="16,8,16,16"
+              ColumnSpacing="8">
+
+            <Button Grid.Column="0"
+                    Text="Générer →"
+                    Clicked="OnGenererClicked"
+                    BackgroundColor="Transparent"
+                    TextColor="{StaticResource BrandAccent}"
+                    BorderColor="{StaticResource BrandAccent}"
+                    BorderWidth="1.5" />
+
+            <Button Grid.Column="1"
+                    Text="Signer et Générer →"
+                    Clicked="OnSignerClicked" />
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>
