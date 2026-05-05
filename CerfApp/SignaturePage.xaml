@@ -55,7 +55,7 @@
                     Clicked="OnEffacerClicked" />
 
             <Button Grid.Column="1"
-                    Text="Valider →"
+                    Text="Valider"
                     BackgroundColor="{StaticResource BrandAccent}"
                     TextColor="White"
                     CornerRadius="8"

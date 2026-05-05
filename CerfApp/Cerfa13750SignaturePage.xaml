@@ -50,7 +50,7 @@
 
             <Button Grid.Column="1"
                     x:Name="ValiderButton"
-                    Text="Valider →"
+                    Text="Valider"
                     Clicked="OnValiderClicked" />
 
         </Grid>

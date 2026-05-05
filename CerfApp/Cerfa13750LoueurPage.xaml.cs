@@ -52,7 +52,7 @@ public partial class Cerfa13750LoueurPage : ContentPage
         DateSignEntry.Text   = l.DateSignature;
 
         SuivantButton.Text = _data.SituationLocative == SituationLocative.CourteDuree
-            ? "Récap →" : "Suivant →";
+            ? "Récapitulatif" : "Suivant";
     }
 
     private void OnTypePersonneChanged(object sender, CheckedChangedEventArgs e)

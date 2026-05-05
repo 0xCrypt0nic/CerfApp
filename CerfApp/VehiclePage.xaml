@@ -104,7 +104,7 @@
                     IsEnabled="False" />
 
             <Button Grid.Column="1"
-                    Text="Suivant →"
+                    Text="Suivant"
                     Clicked="OnSuivantClicked" />
         </Grid>
 

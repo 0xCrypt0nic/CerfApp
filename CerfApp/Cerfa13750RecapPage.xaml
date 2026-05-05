@@ -113,21 +113,19 @@
         </ScrollView>
 
         <Grid Grid.Row="2"
-              ColumnDefinitions="*, *"
+              RowDefinitions="Auto, Auto"
               Padding="16,8,16,16"
-              ColumnSpacing="8">
+              RowSpacing="8">
 
-            <Button Grid.Column="0"
-                    Text="Générer →"
+            <Button Grid.Row="0"
+                    Text="Générer le PDF"
                     Clicked="OnGenererClicked"
-                    BackgroundColor="Transparent"
-                    TextColor="{StaticResource BrandAccent}"
-                    BorderColor="{StaticResource BrandAccent}"
-                    BorderWidth="1.5" />
+                    HorizontalOptions="Fill" />
 
-            <Button Grid.Column="1"
-                    Text="Signer et Générer →"
-                    Clicked="OnSignerClicked" />
+            <Button Grid.Row="1"
+                    Text="Signer et générer le PDF"
+                    Clicked="OnSignerClicked"
+                    HorizontalOptions="Fill" />
 
         </Grid>
 

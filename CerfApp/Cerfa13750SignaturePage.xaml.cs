@@ -39,7 +39,7 @@ public partial class Cerfa13750SignaturePage : ContentPage
         {
             Partie.Titulaire => ("Signature — Titulaire",  "Signature du titulaire",  SuivantLabel()),
             Partie.Loueur    => ("Signature — Loueur",     "Signature du loueur",     SuivantLabel()),
-            Partie.Locataire => ("Signature — Locataire",  "Signature du locataire",  "Valider →"),
+            Partie.Locataire => ("Signature — Locataire",  "Signature du locataire",  "Valider"),
             _                => ("", "", "")
         };
     }
@@ -47,7 +47,7 @@ public partial class Cerfa13750SignaturePage : ContentPage
     private string SuivantLabel()
     {
         var next = ProchainPartie();
-        return next.HasValue ? "Suivant →" : "Valider →";
+        return next.HasValue ? "Suivant" : "Valider";
     }
 
     private Partie? ProchainPartie() => _partie switch

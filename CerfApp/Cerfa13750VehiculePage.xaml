@@ -83,14 +83,10 @@
 
             <Button Grid.Column="0"
                     Text="Scanner"
-                    Clicked="OnScanClicked"
-                    BackgroundColor="Transparent"
-                    TextColor="{StaticResource BrandAccent}"
-                    BorderColor="{StaticResource BrandAccent}"
-                    BorderWidth="1.5" />
+                    Clicked="OnScanClicked" />
 
             <Button Grid.Column="1"
-                    Text="Suivant →"
+                    Text="Suivant"
                     Clicked="OnSuivantClicked" />
 
         </Grid>

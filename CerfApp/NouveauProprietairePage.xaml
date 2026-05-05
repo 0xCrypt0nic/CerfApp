@@ -140,7 +140,7 @@
                     Text="Scanner"
                     Clicked="OnScanClicked" />
             <Button Grid.Column="1"
-                    Text="Récapitulatif →"
+                    Text="Récapitulatif"
                     Clicked="OnSuivantClicked" />
         </Grid>
 

@@ -57,7 +57,7 @@
         </ScrollView>
 
         <Button Grid.Row="2"
-                Text="Suivant →"
+                Text="Suivant"
                 Clicked="OnSuivantClicked"
                 Margin="16,8,16,16"
                 HorizontalOptions="Fill" />
