@@ -17,10 +17,10 @@
                 <Label Text="LE NOUVEAU PROPRIÉTAIRE"
                        FontAttributes="Bold"
                        FontSize="15"
-                       TextDecorations="Underline"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
                        Margin="0,0,0,12" />
 
-                <!-- Type de propriétaire -->
                 <VerticalStackLayout Spacing="6" Margin="0,0,0,12">
                     <RadioButton x:Name="PersonnePhysiqueRadio"
                                  Content="Personne physique (ou entreprise individuelle)"
@@ -28,8 +28,7 @@
                                  CheckedChanged="OnTypeChanged" />
                     <HorizontalStackLayout x:Name="SexeLayout"
                                            Spacing="12"
-                                           IsVisible="True"
-                                           Margin="16,0,0,0">
+                                           HorizontalOptions="Center">
                         <Label Text="Sexe :" VerticalOptions="Center" />
                         <RadioButton x:Name="SexeMRadio" Content="M" GroupName="SexeNvx" />
                         <RadioButton x:Name="SexeFRadio" Content="F" GroupName="SexeNvx" />
@@ -47,12 +46,11 @@
                 <Entry x:Name="SiretEntry" Placeholder="12345678901234" Keyboard="Numeric"
                        MaxLength="14" Style="{StaticResource FieldEntry}" />
 
-                <!-- Naissance -->
-                <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,0">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Né(e) le" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="DateNaissanceEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
-                               HorizontalTextAlignment="Center" WidthRequest="140"
+                               HorizontalTextAlignment="Center" WidthRequest="70"
                                Style="{StaticResource FieldEntry}" />
                     </VerticalStackLayout>
                     <VerticalStackLayout Grid.Column="1" Spacing="2">
@@ -62,17 +60,15 @@
                     </VerticalStackLayout>
                 </Grid>
 
-                <!-- Adresse -->
                 <Label Text="ADRESSE"
                        FontAttributes="Bold"
                        FontSize="13"
-                       TextDecorations="Underline"
                        Margin="0,12,0,8" />
 
                 <Label Text="N° et voie" Style="{StaticResource FieldLabel}" />
                 <Entry x:Name="AdresseNumVoieEntry" Placeholder="ex : 12 rue de la Paix" Style="{StaticResource FieldEntry}" />
 
-                <Grid ColumnDefinitions="120,*">
+                <Grid ColumnDefinitions="108,*" ColumnSpacing="8">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Code postal" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="CodePostalEntry" Placeholder="75001" Keyboard="Numeric"
@@ -85,11 +81,9 @@
                     </VerticalStackLayout>
                 </Grid>
 
-                <!-- Certifie -->
                 <Label Text="CERTIFIE"
                        FontAttributes="Bold"
                        FontSize="13"
-                       TextDecorations="Underline"
                        Margin="0,12,0,10" />
 
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,10">
@@ -112,17 +106,16 @@
                     </Label>
                 </Grid>
 
-                <!-- Fait le -->
-                <Label Text="Fait le :"
+                <Label Text="FAIT LE :"
                        FontAttributes="Bold"
                        FontSize="13"
                        Margin="0,0,0,4" />
 
-                <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,4">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="0,0,0,4">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Date" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="DateFaitEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
-                               HorizontalTextAlignment="Center" WidthRequest="140"
+                               HorizontalTextAlignment="Center" WidthRequest="70"
                                Style="{StaticResource FieldEntry}" />
                     </VerticalStackLayout>
                     <VerticalStackLayout Grid.Column="1" Spacing="2">

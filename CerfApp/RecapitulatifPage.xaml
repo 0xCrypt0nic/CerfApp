@@ -19,11 +19,14 @@
                 <!-- ══════════════════════════════════════════════════════════ -->
                 <Label Text="LE VÉHICULE"
                        FontAttributes="Bold" FontSize="15"
-                       TextDecorations="Underline" Margin="0,0,0,12" />
+                       HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                       Margin="0,0,0,12" />
 
                 <Label Text="Présence du certificat d'immatriculation"
-                       Style="{StaticResource FieldLabel}" Margin="0,0,0,4" />
-                <HorizontalStackLayout Spacing="24" Margin="0,0,0,12">
+                       Style="{StaticResource FieldLabel}"
+                       HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                       Margin="0,0,0,4" />
+                <HorizontalStackLayout Spacing="24" HorizontalOptions="Center" Margin="0,0,0,12">
                     <RadioButton x:Name="V_CertOuiRadio"  Content="OUI" GroupName="GrpCertif"
                                  CheckedChanged="OnCertificatChanged" />
                     <RadioButton x:Name="V_CertNonRadio"  Content="NON" GroupName="GrpCertif"
@@ -76,13 +79,14 @@
                 <!-- ══════════════════════════════════════════════════════════ -->
                 <Label Text="L'ANCIEN PROPRIÉTAIRE"
                        FontAttributes="Bold" FontSize="15"
-                       TextDecorations="Underline" Margin="0,24,0,12" />
+                       HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                       Margin="0,24,0,12" />
 
                 <VerticalStackLayout Spacing="6" Margin="0,0,0,12">
                     <RadioButton x:Name="AP_PersonnePhysiqueRadio"
                                  Content="Personne physique (ou entreprise individuelle)"
                                  GroupName="GrpTypeAnc" CheckedChanged="OnTypeAncienChanged" />
-                    <HorizontalStackLayout x:Name="AP_SexeLayout" Spacing="12" IsVisible="True" Margin="16,0,0,0">
+                    <HorizontalStackLayout x:Name="AP_SexeLayout" Spacing="12" IsVisible="True" HorizontalOptions="Center">
                         <Label Text="Sexe :" VerticalOptions="Center" />
                         <RadioButton x:Name="AP_SexeMRadio" Content="M" GroupName="GrpSexeAnc" />
                         <RadioButton x:Name="AP_SexeFRadio" Content="F" GroupName="GrpSexeAnc" />
@@ -100,12 +104,12 @@
                        MaxLength="14" Style="{StaticResource FieldEntry}" />
 
                 <Label Text="ADRESSE" FontAttributes="Bold" FontSize="13"
-                       TextDecorations="Underline" Margin="0,8,0,8" />
+                       Margin="0,8,0,8" />
 
                 <Label Text="N° et voie" Style="{StaticResource FieldLabel}" />
                 <Entry x:Name="AP_AdresseEntry" Placeholder="ex : 12 rue de la Paix" Style="{StaticResource FieldEntry}" />
 
-                <Grid ColumnDefinitions="120,*">
+                <Grid ColumnDefinitions="108,*" ColumnSpacing="8">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Code postal" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="AP_CodePostalEntry" Placeholder="75001" Keyboard="Numeric"
@@ -126,7 +130,7 @@
                                  GroupName="GrpCession" CheckedChanged="OnCederChanged" />
                 </HorizontalStackLayout>
 
-                <Grid ColumnDefinitions="*,Auto,Auto" Margin="0,0,0,12">
+                <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8" Margin="0,0,0,12">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Date de la cession" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="AP_DateCessionEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
@@ -134,18 +138,18 @@
                     </VerticalStackLayout>
                     <VerticalStackLayout Grid.Column="1" Spacing="2">
                         <Label Text="Heure" Style="{StaticResource FieldLabel}" />
-                        <Entry x:Name="AP_HeureEntry" Placeholder="HH" Keyboard="Numeric" WidthRequest="64"
+                        <Entry x:Name="AP_HeureEntry" Placeholder="HH" Keyboard="Numeric" WidthRequest="56"
                                HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
                     </VerticalStackLayout>
                     <VerticalStackLayout Grid.Column="2" Spacing="2">
                         <Label Text="Minute" Style="{StaticResource FieldLabel}" />
-                        <Entry x:Name="AP_MinuteEntry" Placeholder="MM" Keyboard="Numeric" WidthRequest="64"
+                        <Entry x:Name="AP_MinuteEntry" Placeholder="MM" Keyboard="Numeric" WidthRequest="56"
                                HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
                     </VerticalStackLayout>
                 </Grid>
 
                 <Label Text="JE CERTIFIE EN OUTRE" FontAttributes="Bold" FontSize="13"
-                       TextDecorations="Underline" Margin="0,4,0,10" />
+                       Margin="0,4,0,10" />
 
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,10">
                     <CheckBox x:Name="AP_CheckSitAdmin" Grid.Column="0" VerticalOptions="Start" Margin="0,2,0,0" />
@@ -183,12 +187,12 @@
                     </VerticalStackLayout>
                 </Grid>
 
-                <Label Text="Fait le :" FontAttributes="Bold" FontSize="13" Margin="0,4,0,4" />
-                <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,4">
+                <Label Text="FAIT LE :" FontAttributes="Bold" FontSize="13" Margin="0,4,0,4" />
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="0,0,0,4">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Date" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="AP_DateFaitEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
-                               HorizontalTextAlignment="Center" WidthRequest="140" Style="{StaticResource FieldEntry}" />
+                               HorizontalTextAlignment="Center" WidthRequest="70" Style="{StaticResource FieldEntry}" />
                     </VerticalStackLayout>
                     <VerticalStackLayout Grid.Column="1" Spacing="2">
                         <Label Text="Lieu (commune)" Style="{StaticResource FieldLabel}" />
@@ -202,13 +206,14 @@
                 <!-- ══════════════════════════════════════════════════════════ -->
                 <Label Text="LE NOUVEAU PROPRIÉTAIRE"
                        FontAttributes="Bold" FontSize="15"
-                       TextDecorations="Underline" Margin="0,24,0,12" />
+                       HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                       Margin="0,24,0,12" />
 
                 <VerticalStackLayout Spacing="6" Margin="0,0,0,12">
                     <RadioButton x:Name="NP_PersonnePhysiqueRadio"
                                  Content="Personne physique (ou entreprise individuelle)"
                                  GroupName="GrpTypeNvx" CheckedChanged="OnTypeNouveauChanged" />
-                    <HorizontalStackLayout x:Name="NP_SexeLayout" Spacing="12" IsVisible="True" Margin="16,0,0,0">
+                    <HorizontalStackLayout x:Name="NP_SexeLayout" Spacing="12" IsVisible="True" HorizontalOptions="Center">
                         <Label Text="Sexe :" VerticalOptions="Center" />
                         <RadioButton x:Name="NP_SexeMRadio" Content="M" GroupName="GrpSexeNvx" />
                         <RadioButton x:Name="NP_SexeFRadio" Content="F" GroupName="GrpSexeNvx" />
@@ -225,11 +230,11 @@
                 <Entry x:Name="NP_SiretEntry" Placeholder="12345678901234" Keyboard="Numeric"
                        MaxLength="14" Style="{StaticResource FieldEntry}" />
 
-                <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,0">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="0,0,0,0">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Né(e) le" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="NP_DateNaissanceEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
-                               HorizontalTextAlignment="Center" WidthRequest="140" Style="{StaticResource FieldEntry}" />
+                               HorizontalTextAlignment="Center" WidthRequest="70" Style="{StaticResource FieldEntry}" />
                     </VerticalStackLayout>
                     <VerticalStackLayout Grid.Column="1" Spacing="2">
                         <Label Text="à (lieu de naissance)" Style="{StaticResource FieldLabel}" />
@@ -239,12 +244,12 @@
                 </Grid>
 
                 <Label Text="ADRESSE" FontAttributes="Bold" FontSize="13"
-                       TextDecorations="Underline" Margin="0,8,0,8" />
+                       Margin="0,8,0,8" />
 
                 <Label Text="N° et voie" Style="{StaticResource FieldLabel}" />
                 <Entry x:Name="NP_AdresseEntry" Placeholder="ex : 12 rue de la Paix" Style="{StaticResource FieldEntry}" />
 
-                <Grid ColumnDefinitions="120,*">
+                <Grid ColumnDefinitions="108,*" ColumnSpacing="8">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Code postal" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="NP_CodePostalEntry" Placeholder="75001" Keyboard="Numeric"
@@ -258,7 +263,7 @@
                 </Grid>
 
                 <Label Text="CERTIFIE" FontAttributes="Bold" FontSize="13"
-                       TextDecorations="Underline" Margin="0,12,0,10" />
+                       Margin="0,12,0,10" />
 
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,10">
                     <CheckBox x:Name="NP_CheckAcquerir" Grid.Column="0" VerticalOptions="Start" Margin="0,2,0,0" />
@@ -280,12 +285,12 @@
                     </Label>
                 </Grid>
 
-                <Label Text="Fait le :" FontAttributes="Bold" FontSize="13" Margin="0,0,0,4" />
-                <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,4">
+                <Label Text="FAIT LE :" FontAttributes="Bold" FontSize="13" Margin="0,0,0,4" />
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="0,0,0,4">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Date" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="NP_DateFaitEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
-                               HorizontalTextAlignment="Center" WidthRequest="140" Style="{StaticResource FieldEntry}" />
+                               HorizontalTextAlignment="Center" WidthRequest="70" Style="{StaticResource FieldEntry}" />
                     </VerticalStackLayout>
                     <VerticalStackLayout Grid.Column="1" Spacing="2">
                         <Label Text="Lieu (commune)" Style="{StaticResource FieldLabel}" />
