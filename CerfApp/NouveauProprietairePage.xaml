@@ -50,7 +50,7 @@
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Né(e) le" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="DateNaissanceEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
-                               HorizontalTextAlignment="Center" WidthRequest="70"
+                               HorizontalTextAlignment="Center" WidthRequest="110"
                                Style="{StaticResource FieldEntry}" />
                     </VerticalStackLayout>
                     <VerticalStackLayout Grid.Column="1" Spacing="2">
@@ -87,7 +87,7 @@
                        Margin="0,12,0,10" />
 
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,10">
-                    <CheckBox x:Name="CheckAcquerir" Grid.Column="0" VerticalOptions="Start" Margin="0,2,0,0" />
+                    <CheckBox x:Name="CheckAcquerir" Grid.Column="0" VerticalOptions="Center" />
                     <Label Grid.Column="1" FontSize="12"
                            Text="Acquérir le véhicule désigné ci-dessus aux dates et heures indiquées par l'ancien propriétaire ;">
                         <Label.GestureRecognizers>
@@ -97,7 +97,7 @@
                 </Grid>
 
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,12">
-                    <CheckBox x:Name="CheckInformeSituation" Grid.Column="0" VerticalOptions="Start" Margin="0,2,0,0" />
+                    <CheckBox x:Name="CheckInformeSituation" Grid.Column="0" VerticalOptions="Center" />
                     <Label Grid.Column="1" FontSize="12"
                            Text="Avoir été informé de la situation administrative du véhicule.">
                         <Label.GestureRecognizers>
@@ -115,7 +115,7 @@
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Date" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="DateFaitEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
-                               HorizontalTextAlignment="Center" WidthRequest="70"
+                               HorizontalTextAlignment="Center" WidthRequest="110"
                                Style="{StaticResource FieldEntry}" />
                     </VerticalStackLayout>
                     <VerticalStackLayout Grid.Column="1" Spacing="2">

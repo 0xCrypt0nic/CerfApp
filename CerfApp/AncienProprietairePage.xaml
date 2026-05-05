@@ -106,9 +106,9 @@
                        Margin="0,4,0,10" />
 
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,10">
-                    <CheckBox x:Name="CheckSitAdmin" Grid.Column="0" VerticalOptions="Start" Margin="0,2,0,0" />
+                    <CheckBox x:Name="CheckSitAdmin" Grid.Column="0" VerticalOptions="Center" />
                     <Label Grid.Column="1" FontSize="12"
-                           Text="Avoir remis au nouveau propriétaire un certificat établi depuis moins de quinze jours par le ministre de l'Intérieur, attestant à sa date d'édition de la situation administrative du véhicule ;">
+                           Text="Avoir remis au nouveau propriétaire un certificat établi depuis moins de quinze jours par le ministre de l'Intérieur, attestant à sa date d'édition de la situation administrative du véhicule.">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnLabelSitAdminTapped" />
                         </Label.GestureRecognizers>
@@ -116,9 +116,9 @@
                 </Grid>
 
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,10">
-                    <CheckBox x:Name="CheckTransformation" Grid.Column="0" VerticalOptions="Start" Margin="0,2,0,0" />
+                    <CheckBox x:Name="CheckTransformation" Grid.Column="0" VerticalOptions="Center" />
                     <Label Grid.Column="1" FontSize="12"
-                           Text="Que ce véhicule n'a pas subi de transformation notable susceptible de modifier les indications du certificat de conformité ou de l'actuel certificat d'immatriculation ;">
+                           Text="Que ce véhicule n'a pas subi de transformation notable susceptible de modifier les indications du certificat de conformité ou de l'actuel certificat d'immatriculation.">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnLabelTransformationTapped" />
                         </Label.GestureRecognizers>
@@ -127,7 +127,7 @@
 
                 <Grid x:Name="VhuSection" ColumnDefinitions="Auto,*" ColumnSpacing="10"
                       Margin="0,0,0,4" IsVisible="False">
-                    <CheckBox x:Name="CheckVhu" Grid.Column="0" VerticalOptions="Start" Margin="0,2,0,0"
+                    <CheckBox x:Name="CheckVhu" Grid.Column="0" VerticalOptions="Center"
                               CheckedChanged="OnVhuChecked" />
                     <VerticalStackLayout Grid.Column="1" Spacing="6">
                         <Label FontSize="12"
@@ -152,7 +152,7 @@
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Date" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="DateFaitEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
-                               HorizontalTextAlignment="Center" WidthRequest="70"
+                               HorizontalTextAlignment="Center" WidthRequest="110"
                                Style="{StaticResource FieldEntry}" />
                     </VerticalStackLayout>
                     <VerticalStackLayout Grid.Column="1" Spacing="2">
