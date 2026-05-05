@@ -24,7 +24,7 @@
                 <Label Text="(A)  Numéro d'immatriculation" Style="{StaticResource FieldLabel}" />
                 <Entry x:Name="ImmatriculationEntry" Placeholder="AB-123-CD" Style="{StaticResource FieldEntry}" />
 
-                <Grid ColumnDefinitions="*, *, *" ColumnSpacing="8">
+                <Grid ColumnDefinitions="*, *, *">
                     <VerticalStackLayout Grid.Column="0" Spacing="0">
                         <Label Text="(B)  Mise en circulation" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="MiseCircEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric" Style="{StaticResource FieldEntry}" />
@@ -76,10 +76,8 @@
             </VerticalStackLayout>
         </ScrollView>
 
-        <Grid Grid.Row="2"
-              ColumnDefinitions="*, *"
-              Padding="16,8,16,16"
-              ColumnSpacing="8">
+        <Grid Grid.Row="2" Style="{StaticResource FooterGrid}"
+              ColumnDefinitions="*, *">
 
             <Button Grid.Column="0"
                     Text="Scanner"

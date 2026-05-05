@@ -105,7 +105,7 @@
                 <Label Text="N° et voie" Style="{StaticResource FieldLabel}" />
                 <Entry x:Name="AP_AdresseEntry" Placeholder="ex : 12 rue de la Paix" Style="{StaticResource FieldEntry}" />
 
-                <Grid ColumnDefinitions="120,*" ColumnSpacing="8">
+                <Grid ColumnDefinitions="120,*">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Code postal" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="AP_CodePostalEntry" Placeholder="75001" Keyboard="Numeric"
@@ -126,7 +126,7 @@
                                  GroupName="GrpCession" CheckedChanged="OnCederChanged" />
                 </HorizontalStackLayout>
 
-                <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8" Margin="0,0,0,12">
+                <Grid ColumnDefinitions="*,Auto,Auto" Margin="0,0,0,12">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Date de la cession" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="AP_DateCessionEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
@@ -184,7 +184,7 @@
                 </Grid>
 
                 <Label Text="Fait le :" FontAttributes="Bold" FontSize="13" Margin="0,4,0,4" />
-                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="0,0,0,4">
+                <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,4">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Date" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="AP_DateFaitEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
@@ -225,7 +225,7 @@
                 <Entry x:Name="NP_SiretEntry" Placeholder="12345678901234" Keyboard="Numeric"
                        MaxLength="14" Style="{StaticResource FieldEntry}" />
 
-                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="0,0,0,0">
+                <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,0">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Né(e) le" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="NP_DateNaissanceEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
@@ -244,7 +244,7 @@
                 <Label Text="N° et voie" Style="{StaticResource FieldLabel}" />
                 <Entry x:Name="NP_AdresseEntry" Placeholder="ex : 12 rue de la Paix" Style="{StaticResource FieldEntry}" />
 
-                <Grid ColumnDefinitions="120,*" ColumnSpacing="8">
+                <Grid ColumnDefinitions="120,*">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Code postal" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="NP_CodePostalEntry" Placeholder="75001" Keyboard="Numeric"
@@ -281,7 +281,7 @@
                 </Grid>
 
                 <Label Text="Fait le :" FontAttributes="Bold" FontSize="13" Margin="0,0,0,4" />
-                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="0,0,0,4">
+                <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,4">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Date" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="NP_DateFaitEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
@@ -297,10 +297,8 @@
             </VerticalStackLayout>
         </ScrollView>
 
-        <Grid Grid.Row="2"
-              RowDefinitions="Auto, Auto"
-              Padding="16,8,16,16"
-              RowSpacing="8">
+        <Grid Grid.Row="2" Style="{StaticResource FooterGrid}"
+              RowDefinitions="Auto, Auto">
 
             <Button Grid.Row="0"
                     Text="Générer le PDF"

@@ -48,7 +48,7 @@
                        MaxLength="14" Style="{StaticResource FieldEntry}" />
 
                 <!-- Naissance -->
-                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="0,0,0,0">
+                <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,0">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Né(e) le" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="DateNaissanceEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
@@ -72,7 +72,7 @@
                 <Label Text="N° et voie" Style="{StaticResource FieldLabel}" />
                 <Entry x:Name="AdresseNumVoieEntry" Placeholder="ex : 12 rue de la Paix" Style="{StaticResource FieldEntry}" />
 
-                <Grid ColumnDefinitions="120,*" ColumnSpacing="8">
+                <Grid ColumnDefinitions="120,*">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Code postal" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="CodePostalEntry" Placeholder="75001" Keyboard="Numeric"
@@ -118,7 +118,7 @@
                        FontSize="13"
                        Margin="0,0,0,4" />
 
-                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="0,0,0,4">
+                <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,4">
                     <VerticalStackLayout Grid.Column="0" Spacing="2">
                         <Label Text="Date" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="DateFaitEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
@@ -135,7 +135,7 @@
             </VerticalStackLayout>
         </ScrollView>
 
-        <Grid Grid.Row="2" ColumnDefinitions="*,*" Padding="16,8,16,16" ColumnSpacing="8">
+        <Grid Grid.Row="2" Style="{StaticResource FooterGrid}" ColumnDefinitions="*,*">
             <Button Grid.Column="0"
                     Text="Scanner"
                     Clicked="OnScanClicked" />

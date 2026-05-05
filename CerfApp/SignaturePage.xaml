@@ -40,10 +40,8 @@
         </Grid>
 
         <!-- Boutons -->
-        <Grid Grid.Row="2"
-              ColumnDefinitions="*, *"
-              Padding="16,8,16,16"
-              ColumnSpacing="8">
+        <Grid Grid.Row="2" Style="{StaticResource FooterGrid}"
+              ColumnDefinitions="*, *">
 
             <Button Grid.Column="0"
                     Text="Effacer"

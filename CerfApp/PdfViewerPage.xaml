@@ -28,14 +28,11 @@
                                  Padding="0" />
         </ScrollView>
 
-        <Button Grid.Row="2"
-                Text="Partager"
-                Clicked="OnPartagerClicked"
-                BackgroundColor="{StaticResource BrandAccent}"
-                TextColor="White"
-                CornerRadius="8"
-                Margin="16,8,16,16"
-                HorizontalOptions="Fill" />
+        <Grid Grid.Row="2" Style="{StaticResource FooterGrid}">
+            <Button Text="Partager"
+                    Clicked="OnPartagerClicked"
+                    HorizontalOptions="Fill" />
+        </Grid>
 
     </Grid>
 

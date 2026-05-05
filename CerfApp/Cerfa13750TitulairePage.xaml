@@ -46,7 +46,7 @@
                 <Entry x:Name="NomUsageEntry" Placeholder="Optionnel" Style="{StaticResource FieldEntry}" />
 
                 <VerticalStackLayout x:Name="NaissanceLayout" Spacing="0">
-                    <Grid ColumnDefinitions="*, *" ColumnSpacing="8">
+                    <Grid ColumnDefinitions="*, *">
                         <VerticalStackLayout Grid.Column="0" Spacing="0">
                             <Label Text="Date de naissance" Style="{StaticResource FieldLabel}" />
                             <Entry x:Name="NaissanceEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric" Style="{StaticResource FieldEntry}" />
@@ -57,7 +57,7 @@
                         </VerticalStackLayout>
                     </Grid>
 
-                    <Grid ColumnDefinitions="120, *" ColumnSpacing="8">
+                    <Grid ColumnDefinitions="120, *">
                         <VerticalStackLayout Grid.Column="0" Spacing="0">
                             <Label Text="Dép. naissance" Style="{StaticResource FieldLabel}" />
                             <Entry x:Name="DepNaissEntry" Placeholder="75" Style="{StaticResource FieldEntry}" />
@@ -78,7 +78,7 @@
                 <Label Text="Immeuble / Résidence / Bâtiment" Style="{StaticResource FieldLabel}" />
                 <Entry x:Name="ImmeubleEntry" Placeholder="Optionnel" Style="{StaticResource FieldEntry}" />
 
-                <Grid ColumnDefinitions="80, 80, *" ColumnSpacing="8">
+                <Grid ColumnDefinitions="80, 80, *">
                     <VerticalStackLayout Grid.Column="0" Spacing="0">
                         <Label Text="N° voie" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="NumVoieEntry" Placeholder="12" Style="{StaticResource FieldEntry}" />
@@ -99,7 +99,7 @@
                 <Label Text="Lieu-dit / BP / Localité" Style="{StaticResource FieldLabel}" />
                 <Entry x:Name="LieuDitEntry" Placeholder="Optionnel" Style="{StaticResource FieldEntry}" />
 
-                <Grid ColumnDefinitions="120, *" ColumnSpacing="8">
+                <Grid ColumnDefinitions="120, *">
                     <VerticalStackLayout Grid.Column="0" Spacing="0">
                         <Label Text="Code postal" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="CodePostalEntry" Placeholder="75001" Keyboard="Numeric" MaxLength="5" Style="{StaticResource FieldEntry}" />
@@ -131,7 +131,7 @@
                 <Label Text="SIGNATURE" FontAttributes="Bold" FontSize="13"
                        TextDecorations="Underline" Margin="0,12,0,8" />
 
-                <Grid ColumnDefinitions="*, *" ColumnSpacing="8">
+                <Grid ColumnDefinitions="*, *">
                     <VerticalStackLayout Grid.Column="0" Spacing="0">
                         <Label Text="Fait à" Style="{StaticResource FieldLabel}" />
                         <Entry x:Name="VilleSignEntry" Placeholder="ex : PARIS" Style="{StaticResource FieldEntry}" />
@@ -145,10 +145,8 @@
             </VerticalStackLayout>
         </ScrollView>
 
-        <Grid Grid.Row="2"
-              ColumnDefinitions="*, *"
-              Padding="16,8,16,16"
-              ColumnSpacing="8">
+        <Grid Grid.Row="2" Style="{StaticResource FooterGrid}"
+              ColumnDefinitions="*, *">
 
             <Button Grid.Column="0"
                     Text="Scanner"
