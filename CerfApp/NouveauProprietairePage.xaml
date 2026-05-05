@@ -88,8 +88,8 @@
 
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,10">
                     <CheckBox x:Name="CheckAcquerir" Grid.Column="0" VerticalOptions="Center" />
-                    <Label Grid.Column="1" FontSize="12"
-                           Text="Acquérir le véhicule désigné ci-dessus aux dates et heures indiquées par l'ancien propriétaire ;">
+                    <Label Grid.Column="1" FontSize="12" VerticalOptions="Center"
+                           Text="Acquérir le véhicule désigné ci-dessus aux dates et heures indiquées par l'ancien propriétaire.">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnLabelAcquerirTapped" />
                         </Label.GestureRecognizers>
@@ -98,7 +98,7 @@
 
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,12">
                     <CheckBox x:Name="CheckInformeSituation" Grid.Column="0" VerticalOptions="Center" />
-                    <Label Grid.Column="1" FontSize="12"
+                    <Label Grid.Column="1" FontSize="12" VerticalOptions="Center"
                            Text="Avoir été informé de la situation administrative du véhicule.">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnLabelInformeSituationTapped" />

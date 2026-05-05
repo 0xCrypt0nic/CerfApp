@@ -153,8 +153,8 @@
 
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,10">
                     <CheckBox x:Name="AP_CheckSitAdmin" Grid.Column="0" VerticalOptions="Center" />
-                    <Label Grid.Column="1" FontSize="12"
-                           Text="Avoir remis au nouveau propriétaire un certificat établi depuis moins de quinze jours par le ministre de l'Intérieur, attestant à sa date d'édition de la situation administrative du véhicule ;">
+                    <Label Grid.Column="1" FontSize="12" VerticalOptions="Center"
+                           Text="Avoir remis au nouveau propriétaire un certificat établi depuis moins de quinze jours par le ministre de l'Intérieur, attestant à sa date d'édition de la situation administrative du véhicule.">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnLabelAPSitAdminTapped" />
                         </Label.GestureRecognizers>
@@ -163,8 +163,8 @@
 
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,10">
                     <CheckBox x:Name="AP_CheckTransformation" Grid.Column="0" VerticalOptions="Center" />
-                    <Label Grid.Column="1" FontSize="12"
-                           Text="Que ce véhicule n'a pas subi de transformation notable susceptible de modifier les indications du certificat de conformité ou de l'actuel certificat d'immatriculation ;">
+                    <Label Grid.Column="1" FontSize="12" VerticalOptions="Center"
+                           Text="Que ce véhicule n'a pas subi de transformation notable susceptible de modifier les indications du certificat de conformité ou de l'actuel certificat d'immatriculation.">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnLabelAPTransformationTapped" />
                         </Label.GestureRecognizers>
@@ -267,8 +267,8 @@
 
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,10">
                     <CheckBox x:Name="NP_CheckAcquerir" Grid.Column="0" VerticalOptions="Center" />
-                    <Label Grid.Column="1" FontSize="12"
-                           Text="Acquérir le véhicule désigné ci-dessus aux dates et heures indiquées par l'ancien propriétaire ;">
+                    <Label Grid.Column="1" FontSize="12" VerticalOptions="Center"
+                           Text="Acquérir le véhicule désigné ci-dessus aux dates et heures indiquées par l'ancien propriétaire.">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnLabelNPAcquerirTapped" />
                         </Label.GestureRecognizers>
@@ -277,7 +277,7 @@
 
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="0,0,0,12">
                     <CheckBox x:Name="NP_CheckInformeSituation" Grid.Column="0" VerticalOptions="Center" />
-                    <Label Grid.Column="1" FontSize="12"
+                    <Label Grid.Column="1" FontSize="12" VerticalOptions="Center"
                            Text="Avoir été informé de la situation administrative du véhicule.">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnLabelNPInformeSituationTapped" />
