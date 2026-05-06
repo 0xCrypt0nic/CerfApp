@@ -25,19 +25,18 @@
                 <Label Text="(A)  Numéro d'immatriculation" Style="{StaticResource FieldLabel}" />
                 <Entry x:Name="ImmatriculationEntry" Placeholder="AB-123-CD" Style="{StaticResource FieldEntry}" />
 
-                <Grid ColumnDefinitions="*, *, *">
-                    <VerticalStackLayout Grid.Column="0" Spacing="0">
-                        <Label Text="(B)  Mise en circulation" Style="{StaticResource FieldLabel}" />
-                        <Entry x:Name="MiseCircEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric" Style="{StaticResource FieldEntry}" />
-                    </VerticalStackLayout>
-                    <VerticalStackLayout Grid.Column="1" Spacing="0">
-                        <Label Text="(I)  Date certificat" Style="{StaticResource FieldLabel}" />
-                        <Entry x:Name="CertEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric" Style="{StaticResource FieldEntry}" />
-                    </VerticalStackLayout>
-                    <VerticalStackLayout Grid.Column="2" Spacing="0">
-                        <Label Text="Date d'entrée" Style="{StaticResource FieldLabel}" />
-                        <Entry x:Name="DateEntreeEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric" Style="{StaticResource FieldEntry}" />
-                    </VerticalStackLayout>
+                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="0">
+                    <Label Grid.Row="0" Grid.Column="0" Text="(B)  Mise en circulation" Style="{StaticResource FieldLabel}" />
+                    <Entry Grid.Row="1" Grid.Column="0" x:Name="MiseCircEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
+                           HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+
+                    <Label Grid.Row="2" Grid.Column="0" Text="(I)  Date certificat" Style="{StaticResource FieldLabel}" />
+                    <Entry Grid.Row="3" Grid.Column="0" x:Name="CertEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
+                           HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
+
+                    <Label Grid.Row="4" Grid.Column="0" Text="Date d'entrée" Style="{StaticResource FieldLabel}" />
+                    <Entry Grid.Row="5" Grid.Column="0" x:Name="DateEntreeEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
+                           HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
                 </Grid>
 
                 <Label Text="Numéro de formule" Style="{StaticResource FieldLabel}" />
@@ -68,7 +67,7 @@
                         Margin="0,4,0,8" />
 
                 <Label Text="Teinte" Style="{StaticResource FieldLabel}" />
-                <HorizontalStackLayout Spacing="16" Margin="0,4,0,8">
+                <HorizontalStackLayout Spacing="16" HorizontalOptions="Center" Margin="0,4,0,8">
                     <RadioButton x:Name="TeinteNonRadio"   Content="Non précisée" GroupName="GrpTeinte" />
                     <RadioButton x:Name="TeinteCLairRadio"  Content="Clair"        GroupName="GrpTeinte" />
                     <RadioButton x:Name="TeinteFonceRadio"  Content="Foncé"        GroupName="GrpTeinte" />

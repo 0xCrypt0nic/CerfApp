@@ -47,25 +47,29 @@
                 <Entry x:Name="NomUsageEntry" Placeholder="Optionnel" Style="{StaticResource FieldEntry}" />
 
                 <VerticalStackLayout x:Name="NaissanceLayout" Spacing="0">
-                    <Grid ColumnDefinitions="*, *">
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
                         <VerticalStackLayout Grid.Column="0" Spacing="0">
                             <Label Text="Date de naissance" Style="{StaticResource FieldLabel}" />
-                            <Entry x:Name="NaissanceEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric" Style="{StaticResource FieldEntry}" />
+                            <Entry x:Name="NaissanceEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
+                                   WidthRequest="110" HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
                         </VerticalStackLayout>
                         <VerticalStackLayout Grid.Column="1" Spacing="0">
                             <Label Text="Commune de naissance" Style="{StaticResource FieldLabel}" />
-                            <Entry x:Name="VilleNaissEntry" Placeholder="ex : PARIS" Style="{StaticResource FieldEntry}" />
+                            <Entry x:Name="VilleNaissEntry" Placeholder="ex : PARIS"
+                                   HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
                         </VerticalStackLayout>
                     </Grid>
 
-                    <Grid ColumnDefinitions="120, *">
+                    <Grid ColumnDefinitions="60,*" ColumnSpacing="8">
                         <VerticalStackLayout Grid.Column="0" Spacing="0">
-                            <Label Text="Dép. naissance" Style="{StaticResource FieldLabel}" />
-                            <Entry x:Name="DepNaissEntry" Placeholder="75" Style="{StaticResource FieldEntry}" />
+                            <Label Text="Dép." Style="{StaticResource FieldLabel}" />
+                            <Entry x:Name="DepNaissEntry" Placeholder="75"
+                                   HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
                         </VerticalStackLayout>
                         <VerticalStackLayout Grid.Column="1" Spacing="0">
-                            <Label Text="Pays naissance" Style="{StaticResource FieldLabel}" />
-                            <Entry x:Name="PaysNaissEntry" Placeholder="FRANCE" Style="{StaticResource FieldEntry}" />
+                            <Label Text="Pays de naissance" Style="{StaticResource FieldLabel}" />
+                            <Entry x:Name="PaysNaissEntry" Placeholder="FRANCE"
+                                   HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
                         </VerticalStackLayout>
                     </Grid>
                 </VerticalStackLayout>
@@ -79,18 +83,21 @@
                 <Label Text="Immeuble / Résidence / Bâtiment" Style="{StaticResource FieldLabel}" />
                 <Entry x:Name="ImmeubleEntry" Placeholder="Optionnel" Style="{StaticResource FieldEntry}" />
 
-                <Grid ColumnDefinitions="80, 80, *">
+                <Grid ColumnDefinitions="80,80,*" ColumnSpacing="8">
                     <VerticalStackLayout Grid.Column="0" Spacing="0">
                         <Label Text="N° voie" Style="{StaticResource FieldLabel}" />
-                        <Entry x:Name="NumVoieEntry" Placeholder="12" Style="{StaticResource FieldEntry}" />
+                        <Entry x:Name="NumVoieEntry" Placeholder="12"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
                     </VerticalStackLayout>
                     <VerticalStackLayout Grid.Column="1" Spacing="0">
                         <Label Text="Ext." Style="{StaticResource FieldLabel}" />
-                        <Entry x:Name="ExtensionEntry" Placeholder="bis" Style="{StaticResource FieldEntry}" />
+                        <Entry x:Name="ExtensionEntry" Placeholder="bis"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
                     </VerticalStackLayout>
                     <VerticalStackLayout Grid.Column="2" Spacing="0">
                         <Label Text="Type de voie" Style="{StaticResource FieldLabel}" />
-                        <Entry x:Name="TypeVoieEntry" Placeholder="RUE" Style="{StaticResource FieldEntry}" />
+                        <Entry x:Name="TypeVoieEntry" Placeholder="RUE"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
                     </VerticalStackLayout>
                 </Grid>
 
@@ -100,14 +107,16 @@
                 <Label Text="Lieu-dit / BP / Localité" Style="{StaticResource FieldLabel}" />
                 <Entry x:Name="LieuDitEntry" Placeholder="Optionnel" Style="{StaticResource FieldEntry}" />
 
-                <Grid ColumnDefinitions="120, *">
+                <Grid ColumnDefinitions="108,*" ColumnSpacing="8">
                     <VerticalStackLayout Grid.Column="0" Spacing="0">
                         <Label Text="Code postal" Style="{StaticResource FieldLabel}" />
-                        <Entry x:Name="CodePostalEntry" Placeholder="75001" Keyboard="Numeric" MaxLength="5" Style="{StaticResource FieldEntry}" />
+                        <Entry x:Name="CodePostalEntry" Placeholder="75001" Keyboard="Numeric" MaxLength="5"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
                     </VerticalStackLayout>
                     <VerticalStackLayout Grid.Column="1" Spacing="0">
                         <Label Text="Commune" Style="{StaticResource FieldLabel}" />
-                        <Entry x:Name="CommuneEntry" Placeholder="PARIS" Style="{StaticResource FieldEntry}" />
+                        <Entry x:Name="CommuneEntry" Placeholder="PARIS"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
                     </VerticalStackLayout>
                 </Grid>
 
@@ -132,14 +141,16 @@
                 <Label Text="SIGNATURE" FontAttributes="Bold" FontSize="13"
                        Margin="0,12,0,8" />
 
-                <Grid ColumnDefinitions="*, *">
+                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
                     <VerticalStackLayout Grid.Column="0" Spacing="0">
                         <Label Text="Fait à" Style="{StaticResource FieldLabel}" />
-                        <Entry x:Name="VilleSignEntry" Placeholder="ex : PARIS" Style="{StaticResource FieldEntry}" />
+                        <Entry x:Name="VilleSignEntry" Placeholder="ex : PARIS"
+                               HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
                     </VerticalStackLayout>
                     <VerticalStackLayout Grid.Column="1" Spacing="0">
                         <Label Text="Le" Style="{StaticResource FieldLabel}" />
-                        <Entry x:Name="DateSignEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric" Style="{StaticResource FieldEntry}" />
+                        <Entry x:Name="DateSignEntry" Placeholder="JJ/MM/AAAA" Keyboard="Numeric"
+                               WidthRequest="110" HorizontalTextAlignment="Center" Style="{StaticResource FieldEntry}" />
                     </VerticalStackLayout>
                 </Grid>
 

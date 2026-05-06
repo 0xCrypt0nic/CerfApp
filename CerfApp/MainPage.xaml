@@ -28,10 +28,6 @@
                     Clicked="OnCerfa15776Clicked"
                     HorizontalOptions="Fill" />
 
-            <Button Text="Certificat d'immatriculation 13750*07"
-                    Clicked="OnCerfa13750Clicked"
-                    HorizontalOptions="Fill" />
-
         </VerticalStackLayout>
 
     </Grid>
