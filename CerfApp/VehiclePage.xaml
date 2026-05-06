@@ -80,9 +80,10 @@
                 <VerticalStackLayout x:Name="MotifAbsenceLayout" IsVisible="False" Spacing="2">
                     <Label Text="Motif d'absence du certificat" Style="{StaticResource FieldLabel}" />
                     <Editor x:Name="MotifAbsenceEditor"
-                            Placeholder="précisez le motif"
+                            Placeholder="Précisez le motif"
                             HeightRequest="90"
-                            AutoSize="Disabled" />
+                            AutoSize="Disabled"
+                            Style="{StaticResource FieldEditor}" />
                 </VerticalStackLayout>
 
             </VerticalStackLayout>
