@@ -19,7 +19,8 @@
 
                 <Label Text="LE VÉHICULE"
                        FontAttributes="Bold" FontSize="15"
-                       TextDecorations="Underline" Margin="0,8,0,12" />
+                       HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                       Margin="0,8,0,12" />
 
                 <Label Text="(A)  Numéro d'immatriculation" Style="{StaticResource FieldLabel}" />
                 <Entry x:Name="ImmatriculationEntry" Placeholder="AB-123-CD" Style="{StaticResource FieldEntry}" />

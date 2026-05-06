@@ -19,14 +19,15 @@
 
                 <Label Text="LE TITULAIRE"
                        FontAttributes="Bold" FontSize="15"
-                       TextDecorations="Underline" Margin="0,8,0,12" />
+                       HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                       Margin="0,8,0,12" />
 
                 <VerticalStackLayout Spacing="4" Margin="0,0,0,8">
                     <RadioButton x:Name="PersonnePhysiqueRadio"
                                  Content="Personne physique"
                                  GroupName="GrpTypeTit"
                                  CheckedChanged="OnTypePersonneChanged" />
-                    <HorizontalStackLayout x:Name="SexeLayout" Spacing="16" Margin="16,0,0,0">
+                    <HorizontalStackLayout x:Name="SexeLayout" Spacing="16" HorizontalOptions="Center">
                         <RadioButton x:Name="SexeMRadio" Content="M" GroupName="GrpSexeTit" />
                         <RadioButton x:Name="SexeFRadio" Content="F" GroupName="GrpSexeTit" />
                     </HorizontalStackLayout>
@@ -70,7 +71,7 @@
                 </VerticalStackLayout>
 
                 <Label Text="ADRESSE" FontAttributes="Bold" FontSize="13"
-                       TextDecorations="Underline" Margin="0,12,0,8" />
+                       Margin="0,12,0,8" />
 
                 <Label Text="Étage / Escalier / Appartement" Style="{StaticResource FieldLabel}" />
                 <Entry x:Name="EtageEntry" Placeholder="Optionnel" Style="{StaticResource FieldEntry}" />
@@ -117,7 +118,7 @@
                 <Entry x:Name="MailEntry" Placeholder="exemple@mail.fr" Keyboard="Email" Style="{StaticResource FieldEntry}" />
 
                 <Label Text="CO-TITULAIRE(S)" FontAttributes="Bold" FontSize="13"
-                       TextDecorations="Underline" Margin="0,12,0,8" />
+                       Margin="0,12,0,8" />
 
                 <Label Text="Nombre de co-titulaires" Style="{StaticResource FieldLabel}" />
                 <Entry x:Name="NbCotitEntry" Placeholder="0" Keyboard="Numeric" MaxLength="2" Style="{StaticResource FieldEntry}" />
@@ -129,7 +130,7 @@
                 <Entry x:Name="CotitSiretEntry" Placeholder="Optionnel" Keyboard="Numeric" MaxLength="14" Style="{StaticResource FieldEntry}" />
 
                 <Label Text="SIGNATURE" FontAttributes="Bold" FontSize="13"
-                       TextDecorations="Underline" Margin="0,12,0,8" />
+                       Margin="0,12,0,8" />
 
                 <Grid ColumnDefinitions="*, *">
                     <VerticalStackLayout Grid.Column="0" Spacing="0">

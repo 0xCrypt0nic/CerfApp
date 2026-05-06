@@ -17,10 +17,10 @@
         <ScrollView Grid.Row="1">
             <VerticalStackLayout Padding="24" Spacing="8">
 
-                <Label Text="Type de demande"
+                <Label Text="TYPE DE DEMANDE"
                        FontAttributes="Bold"
                        FontSize="15"
-                       TextDecorations="Underline"
+                       HorizontalOptions="Center" HorizontalTextAlignment="Center"
                        Margin="0,8,0,16" />
 
                 <RadioButton x:Name="RadioCertificat"
@@ -56,11 +56,11 @@
             </VerticalStackLayout>
         </ScrollView>
 
-        <Button Grid.Row="2"
-                Text="Suivant"
-                Clicked="OnSuivantClicked"
-                Margin="16,8,16,16"
-                HorizontalOptions="Fill" />
+        <Grid Grid.Row="2" Style="{StaticResource FooterGrid}">
+            <Button Text="Suivant"
+                    Clicked="OnSuivantClicked"
+                    HorizontalOptions="Fill" />
+        </Grid>
 
     </Grid>
 
