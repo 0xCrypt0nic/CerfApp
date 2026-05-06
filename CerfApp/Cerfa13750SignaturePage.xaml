@@ -11,8 +11,7 @@
     <Grid RowDefinitions="Auto, *, Auto">
 
         <controls:HeaderView Grid.Row="0"
-                             x:Name="Header"
-                             ShowSettings="False" />
+                             x:Name="Header" />
 
         <Grid Grid.Row="1" Margin="16">
 

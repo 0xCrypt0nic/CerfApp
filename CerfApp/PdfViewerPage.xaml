@@ -10,8 +10,7 @@
     <Grid RowDefinitions="Auto, *, Auto">
 
         <controls:HeaderView Grid.Row="0"
-                             PageTitle="Aperçu du document"
-                             ShowSettings="False" />
+                             PageTitle="Aperçu du document" />
 
         <!-- Indicateur de chargement -->
         <ActivityIndicator Grid.Row="1"

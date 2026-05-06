@@ -10,8 +10,7 @@
     <Grid RowDefinitions="Auto, *, Auto">
 
         <controls:HeaderView Grid.Row="0"
-                             ShowBack="True"
-                             ShowSettings="False" />
+                             ShowBack="True" />
 
         <ScrollView Grid.Row="1">
             <VerticalStackLayout Padding="16" Spacing="0">

@@ -11,8 +11,7 @@
 
         <controls:HeaderView Grid.Row="0"
                              PageTitle="CerfApp"
-                             ShowBack="False"
-                             ShowSettings="True" />
+                             ShowBack="False" />
 
         <VerticalStackLayout Grid.Row="1"
                              Spacing="16"

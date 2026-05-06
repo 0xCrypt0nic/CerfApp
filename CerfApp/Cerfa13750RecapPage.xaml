@@ -11,8 +11,7 @@
 
         <controls:HeaderView Grid.Row="0"
                              PageTitle="Récapitulatif (13750*07)"
-                             ShowBack="True"
-                             ShowSettings="False" />
+                             ShowBack="True" />
 
         <ScrollView Grid.Row="1">
             <VerticalStackLayout Padding="16" Spacing="0">

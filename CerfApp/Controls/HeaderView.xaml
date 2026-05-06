@@ -36,16 +36,7 @@
                    FontSize="14"
                    FontAttributes="Bold" />
 
-            <!-- Bouton paramètres -->
-            <Button Grid.Column="2"
-                    Text="⚙"
-                    FontSize="20"
-                    TextColor="White"
-                    BackgroundColor="Transparent"
-                    BorderWidth="0"
-                    Padding="0"
-                    IsVisible="{Binding ShowSettings, Source={x:Reference self}}"
-                    Clicked="OnSettingsClicked" />
+            <!-- Colonne droite vide (symétrie avec le bouton retour) -->
 
         </Grid>
 
