@@ -10,7 +10,7 @@
     <Grid RowDefinitions="Auto, *">
 
         <controls:HeaderView Grid.Row="0"
-                             PageTitle="CerfApp"
+                             PageTitle="CerfApp – Génération de CERFA"
                              ShowBack="False" />
 
         <VerticalStackLayout Grid.Row="1"
